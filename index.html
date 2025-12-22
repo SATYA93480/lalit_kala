@@ -3,43 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lalit Kala Akademi</title>
+    <title>Mission - Lalit Kala Akademi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Top Navigation Bar -->
+    <!-- SAME TOP NAVBAR -->
     <header class="navbar">
         <div class="navbar-container">
-            <!-- Empty Left Section -->
-            <div class="navbar-left">
-                <!-- Empty for logo space -->
-            </div>
-
-            <!-- Right Section - Login, Language & Search -->
+            <div class="navbar-left"></div>
             <div class="navbar-right">
-                <!-- Login/Register and Contact Links -->
                 <ul id="menu-top-nav" class="header_top_nav">
                     <li><a href="#" class="nav-link">Login or Register</a></li>
                     <li><span class="nav-divider">/</span></li>
                     <li><a href="#" class="nav-link">Contact</a></li>
                 </ul>
-
-                <!-- Language Button (styled like DONATE) -->
                 <div class="language-btn-group">
                     <button class="btn-lang active" data-lang="en">EN</button>
                     <span class="lang-separator">/</span>
                     <button class="btn-lang" data-lang="od">ଓଡ଼ିଆ</button>
                 </div>
-
-                <!-- Search Bar -->
                 <div class="search-container">
-                    <input 
-                        type="text" 
-                        class="search-input" 
-                        placeholder="SEARCH"
-                        id="searchInput"
-                    >
+                    <input type="text" class="search-input" placeholder="SEARCH" id="searchInput">
                     <button class="search-btn" id="searchBtn">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="11" cy="11" r="8"></circle>
@@ -47,21 +32,16 @@
                         </svg>
                     </button>
                 </div>
-
-                <!-- Mobile Menu Toggle -->
                 <button class="menu-toggle" id="menuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Main Header with Logos, Title, and Navigation -->
-    <header class="header-main">
+    <!-- SAME MAIN HEADER WITH LOGOS -->
+<header class="header-main">
         <div class="header-container">
-            <!-- Left Section - Three Circular Logos (Overlapping) -->
             <div class="header-logos">
                 <div class="logo-circle">
                     <img src="odishalogo.png" alt="Odisha Logo" onerror="this.src='https://via.placeholder.com/120x120/0B3E66/FFFFFF?text=OL'">
@@ -73,68 +53,48 @@
                     <img src="culture.png" alt="Culture Logo" onerror="this.src='https://via.placeholder.com/120x120/0B3E66/FFFFFF?text=CL'">
                 </div>
             </div>
-
-            <!-- Middle Section - Title Text -->
             <div class="header-title-section">
-    <!-- <p class="header-subtitle">Government of Odisha</p> -->
-    <h1 class="header-title">
-        <span class="header-main-text">Lalit Kala Academy</span>
-    </h1>
-</div>
-
-
-            <!-- Right Section - Navigation Menu -->
-<!-- Right Section - Navigation Menu -->
-<nav class="header-nav">
-    <ul class="nav-list">
-        <!-- Who We Are with Dropdown -->
-        <li class="nav-item dropdown">
-            <a href="#" class="nav-link-main dropdown-toggle">
-                Who We Are
-                <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
-            <!-- Dropdown Menu -->
-            <ul class="dropdown-menu">
-                <li><a href="#mission" class="dropdown-link">Mission</a></li>
-                <li><a href="#history" class="dropdown-link">History</a></li>
-                <li><a href="#governance" class="dropdown-link">Governance</a></li>
-                <li><a href="#policies" class="dropdown-link">Policies</a></li>
-            </ul>
-        </li>
-
-        <!-- Programs & Services -->
-        <li class="nav-item">
-            <a href="#" class="nav-link-main">
-                Programs & Services
-                <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
-        </li>
-
-        <!-- Join -->
-        <li class="nav-item">
-            <a href="#" class="nav-link-main">
-                Join
-                <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
-        </li>
-
-        <!-- Give -->
-        <li class="nav-item">
-            <a href="#" class="nav-link-main">
-                Give
-                <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
-        </li>
+                <h1 class="header-title">
+                    <span class="header-main-text">Lalit Kala Academy</span>
+                </h1>
+            </div>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a href="mission.html" class="nav-link-main dropdown-toggle">
+                            Who We Are
+                            <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="mission.html" class="dropdown-link">Mission</a></li>
+                            <li><a href="history.html" class="dropdown-link">History</a></li>
+                            <li><a href="activities.html" class="dropdown-link">Activities</a></li>
+                            <!-- <li><a href="#policies" class="dropdown-link">Policies</a></li> -->
+                        </ul>
+                    </li>
+                   <li class="nav-item dropdown">
+    <a href="#" class="nav-link-main dropdown-toggle">
+        Publication
+        <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1"
+                  stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+    <ul class="dropdown-menu">
+        <li><a href="publication.html" class="dropdown-link">Publication</a></li>
+        <li><a href="magazines.html" class="dropdown-link">Magazines</a></li>
+        <li><a href="achievements.html" class="dropdown-link">Achievements</a></li>
+        <li><a href="art-odisha-glance.html" class="dropdown-link">Art of Odisha at a Glance</a></li>
     </ul>
-</nav>
+</li>
+
+                    <li class="nav-item"><a href="#" class="nav-link-main">Join</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link-main">Give</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     <!-- Hero Section -->

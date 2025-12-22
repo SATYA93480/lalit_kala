@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission - Lalit Kala Akademi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SAME TOP NAVBAR -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-left"></div>
+            <div class="navbar-right">
+                <ul id="menu-top-nav" class="header_top_nav">
+                    <li><a href="#" class="nav-link">Login or Register</a></li>
+                    <li><span class="nav-divider">/</span></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="language-btn-group">
+                    <button class="btn-lang active" data-lang="en">EN</button>
+                    <span class="lang-separator">/</span>
+                    <button class="btn-lang" data-lang="od">ଓଡ଼ିଆ</button>
+                </div>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="SEARCH" id="searchInput">
+                    <button class="search-btn" id="searchBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SAME MAIN HEADER WITH LOGOS -->
+    <header class="header-main">
+        <div class="header-container">
+            <div class="header-logos">
+                <div class="logo-circle">
+                    <img src="odishalogo.png" alt="Odisha Logo" onerror="this.src='https://via.placeholder.com/120x120/0B3E66/FFFFFF?text=OL'">
+                </div>
+                <div class="logo-circle">
+                    <img src="lalitakala.png" alt="Lalit Kala Logo" onerror="this.src='https://via.placeholder.com/120x120/0B3E66/FFFFFF?text=LK'">
+                </div>
+                <div class="logo-circle">
+                    <img src="culture.png" alt="Culture Logo" onerror="this.src='https://via.placeholder.com/120x120/0B3E66/FFFFFF?text=CL'">
+                </div>
+            </div>
+            <div class="header-title-section">
+                <h1 class="header-title">
+                    <span class="header-main-text">Lalit Kala Academy</span>
+                </h1>
+            </div>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a href="mission.html" class="nav-link-main dropdown-toggle">
+                            Who We Are
+                            <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="mission.html" class="dropdown-link">Mission</a></li>
+                            <li><a href="history.html" class="dropdown-link">History</a></li>
+                            <li><a href="activities.html" class="dropdown-link">Activities</a></li>
+                            <!-- <li><a href="#policies" class="dropdown-link">Policies</a></li> -->
+                        </ul>
+                    </li>
+                   <li class="nav-item dropdown">
+    <a href="#" class="nav-link-main dropdown-toggle">
+        Publication
+        <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1"
+                  stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+    <ul class="dropdown-menu">
+        <li><a href="publication.html" class="dropdown-link">Publication</a></li>
+        <li><a href="magazines.html" class="dropdown-link">Magazines</a></li>
+        <li><a href="achievements.html" class="dropdown-link">Achievements</a></li>
+        <li><a href="art-odisha-glance.html" class="dropdown-link">Art of Odisha at a Glance</a></li>
+    </ul>
+</li>
+
+                    <li class="nav-item"><a href="#" class="nav-link-main">Join</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link-main">Give</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SAME HERO SECTION - MISSION CONTENT -->
+<!-- HERO SECTION FOR ACTIVITIES PAGE -->
+<section class="hero-section history-hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="news-ticker-inline">
+                <div class="news-ticker-item active">
+                    <div class="news-content">
+                        <h1 class="scroll-title">Events
+                    </div>
+                </div>
+            </div>
+            <!-- No button, like mission banner -->
+        </div>
+    </div>
+</section>
+ <section class="mission-main events-main">
+    <div class="events-container">
+
+        <!-- EVENT LIST (pages) -->
+        <div id="eventsPageWrapper">
+            <!-- Page 1 -->
+            <div class="events-page active" data-page="1">
+                <!-- Event 1 -->
+                <article class="event-block">
+                    <h2 class="event-title">
+                        The 41st state level Charukala Exhibition was inaugurated by Odisha Lalit Kala Akademi.
+                        The exhibition will remain open from 11 am to 7 pm every day till 12/05/24.
+                    </h2>
+
+                    <div class="event-gallery" data-event="1">
+                        <button class="event-arrow prev" aria-label="Previous image">&#10094;</button>
+
+                        <div class="event-images">
+                            <img src="charukala1.jpg" alt="Charukala exhibition photo 1" class="active">
+                            <img src="charukala2.jpg" alt="Charukala exhibition photo 2">
+                            <img src="charukala3.jpg" alt="Charukala exhibition photo 3">
+                            <img src="charukala4.jpg" alt="Charukala exhibition photo 4">
+                        </div>
+
+                        <button class="event-arrow next" aria-label="Next image">&#10095;</button>
+                    </div>
+                </article>
+
+                <!-- Event 2 -->
+                <article class="event-block">
+                    <h2 class="event-title">
+                        Women Artists Camp on the Occasion of International Womens Day 8th March 2024.
+                    </h2>
+
+                    <div class="event-gallery" data-event="2">
+                        <button class="event-arrow prev" aria-label="Previous image">&#10094;</button>
+
+                        <div class="event-images">
+                            <img src="women1.jpg" alt="Women artists camp photo 1" class="active">
+                            <img src="women2.jpg" alt="Women artists camp photo 2">
+                            <img src="women3.jpg" alt="Women artists camp photo 3">
+                            <img src="women4.jpg" alt="Women artists camp photo 4">
+                        </div>
+
+                        <button class="event-arrow next" aria-label="Next image">&#10095;</button>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Page 2 (example, you can duplicate structure and change images/text) -->
+            <div class="events-page" data-page="2">
+                <article class="event-block">
+                    <h2 class="event-title">
+                        Odisha Lalit Kala Akademi celebrates 96th Birth anniversary of sculptor late Bipracharan Mohanty.
+                    </h2>
+
+                    <div class="event-gallery" data-event="3">
+                        <button class="event-arrow prev" aria-label="Previous image">&#10094;</button>
+
+                        <div class="event-images">
+                            <img src="bipra1.jpg" alt="Bipracharan event photo 1" class="active">
+                            <img src="bipra2.jpg" alt="Bipracharan event photo 2">
+                            <img src="bipra3.jpg" alt="Bipracharan event photo 3">
+                            <img src="bipra4.jpg" alt="Bipracharan event photo 4">
+                        </div>
+
+                        <button class="event-arrow next" aria-label="Next image">&#10095;</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- PAGINATION -->
+        <nav class="events-pagination" aria-label="Events pages">
+            <button class="page-btn page-prev" disabled>Previous</button>
+
+            <button class="page-btn page-number active" data-page="1">1</button>
+            <button class="page-btn page-number" data-page="2">2</button>
+            <span class="page-ellipsis">…</span>
+            <button class="page-btn page-number" data-page="11">11</button>
+
+            <button class="page-btn page-next">Next</button>
+        </nav>
+    </div>
+</section>
+
+    <!-- SAME FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-blue-section">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <nav class="footer-nav">
+                        <a href="contact.html">Contact</a>
+                        <span class="nav-separator">/</span>
+                        <a href="donate.html">Donate</a>
+                        <span class="nav-separator">/</span>
+                        <a href="cart.html">Cart</a>
+                        <span class="nav-separator">/</span>
+                        <a href="account.html">Account</a>
+                    </nav>
+                    <a href="#top" class="back-to-top">Back to Top ↑</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="footer-logo">
+                    <h2 class="footer-title">
+                        <span class="footer-main">Lalit Kala Academy</span> 
+                        <span class="footer-of">of</span> 
+                        <span class="footer-country">Odisha</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2025 by the Odisha Lalit Kala Academy. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | Website by <a href="#">Yelling Mule</a>, ongoing development by <a href="#">Castle Builder</a>.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
