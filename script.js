@@ -1,72 +1,265 @@
-// Mobile Menu Toggle Functionality
+// =====================
+// MOBILE MENU TOGGLE – MAIN NAV ONLY
+// =====================
 const menuToggle = document.getElementById('menuToggle');
-const headerTopNav = document.querySelector('.header_top_nav');
+const mainNav = document.querySelector('.header-nav');
 
-if (menuToggle && headerTopNav) {
-    menuToggle.addEventListener('click', function() {
+if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', function () {
         menuToggle.classList.toggle('active');
-        headerTopNav.classList.toggle('active');
+        mainNav.classList.toggle('active');
     });
 }
 
-// Close menu when clicking nav links
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-        if (window.innerWidth <= 640) {
-            if (menuToggle && headerTopNav) {
-                menuToggle.classList.remove('active');
-                headerTopNav.classList.remove('active');
-            }
+// Close main mobile menu when clicking links (NOT the more 3‑bar)
+const mainNavLinks = document.querySelectorAll('.nav-link-main:not(.more-toggle), .dropdown-link');
+mainNavLinks.forEach(link => {
+    link.addEventListener('click', function () {
+        if (window.innerWidth <= 900 && menuToggle && mainNav) {
+            menuToggle.classList.remove('active');
+            mainNav.classList.remove('active');
         }
     });
 });
 
-// Search Functionality
+// Close main menu on desktop resize
+window.addEventListener('resize', function () {
+    if (window.innerWidth > 900 && menuToggle && mainNav) {
+        menuToggle.classList.remove('active');
+        mainNav.classList.remove('active');
+    }
+});
+
+// =====================
+// MORE SLIDER MENU – FINAL
+// =====================
+document.addEventListener('DOMContentLoaded', function () {
+    const moreToggle = document.getElementById('moreToggle');
+    const moreSlider = document.getElementById('moreSlider');
+    const moreClose  = document.getElementById('moreClose');
+
+    // Create overlay if not present
+    let overlay = document.querySelector('.more-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'more-overlay';
+        document.body.appendChild(overlay);
+    }
+
+    let scrollPosition = 0;
+
+    function closeSlider() {
+        if (!moreSlider) return;
+
+        moreToggle && moreToggle.classList.remove('active');
+        moreSlider.classList.remove('active');
+        overlay.classList.remove('active');
+
+        // restore body scroll
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, scrollPosition);
+    }
+
+    function openSlider() {
+        if (!moreSlider) return;
+
+        // save scroll
+        scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+        moreToggle && moreToggle.classList.add('active');
+        moreSlider.classList.add('active');
+        overlay.classList.add('active');
+
+        // lock background scroll, allow slider scroll (CSS has overflow-y:auto)
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollPosition}px`;
+        document.body.style.width = '100%';
+
+        setupCompleteMobileMenu();
+    }
+
+    // toggle button
+    moreToggle && moreToggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (moreSlider && moreSlider.classList.contains('active')) {
+            closeSlider();
+        } else {
+            openSlider();
+        }
+    });
+
+    moreClose && moreClose.addEventListener('click', closeSlider);
+    overlay.addEventListener('click', closeSlider);
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && moreSlider && moreSlider.classList.contains('active')) {
+            closeSlider();
+        }
+    });
+
+    // let links work normally, just close slider after click
+    if (moreSlider) {
+        moreSlider.addEventListener('click', e => {
+            const link = e.target.closest('.slider-section a');
+            if (link) {
+                // no preventDefault -> browser will follow href
+                closeSlider();
+            }
+        });
+    }
+
+    // ===== BUILD ALL PAGES FOR MOBILE =====
+    function setupCompleteMobileMenu() {
+        if (window.innerWidth > 900) return;
+        const slider = document.getElementById('moreSlider');
+        if (!slider) return;
+
+        // clear previous dynamic sections
+        slider.querySelectorAll('.mobile-full-section').forEach(s => s.remove());
+
+        // 1. Who we are
+        addSection(slider, 'who', '👥 WHO WE ARE', [
+            'mission.html|Mission',
+            'history.html|History',
+            'activities.html|Activities'
+        ]);
+
+        // 2. Publication
+        addSection(slider, 'pub', '📚 PUBLICATION', [
+            'publication.html|Publication',
+            'magazines.html|Magazines',
+            'achievements.html|Achievements',
+            'art-odisha-glance.html|Art Odisha Glance'
+        ]);
+
+        // 3. Media gallery
+        addSection(slider, 'media', '📸 MEDIA GALLERY', [
+            'photo-gallery.html|Photo Gallery',
+            'video-gallery.html|Video Gallery'
+        ]);
+
+        // 4. About us
+        addSection(slider, 'about', 'ℹ️ ABOUT US', [
+            'about-lalitkala.html|About Lalit Kala',
+            'staffing-pattern.html|Staffing Pattern',
+            'artist-database.html|Artist Database',
+            'contact-us.html|Contact Us'
+        ]);
+
+        // 5. Notifications
+        addSection(slider, 'notif', '🔔 NOTIFICATIONS', [
+            'awards-felicitation.html|Awards',
+            'plans-programmes.html|Plans',
+            'announcement.html|Announcement',
+            'advertisement.html|Advertisement',
+            'tender-notice.html|Tender Notice',
+            'events.html|Events'
+        ]);
+    }
+
+    function addSection(slider, id, title, links) {
+        const section = document.createElement('div');
+        section.className = 'slider-section mobile-full-section';
+        section.dataset.id = id;
+
+        const linksHTML = links.map(item => {
+            const [href, text] = item.split('|');
+            return `<li><a href="${href}" class="slider-link">${text}</a></li>`;
+        }).join('');
+
+        section.innerHTML = `
+            <h4>${title} <i class="fas fa-chevron-right"></i></h4>
+            <ul>${linksHTML}</ul>
+        `;
+        slider.appendChild(section);
+    }
+});
+// ===== SECTION TOGGLE + BACK BUTTONS =====
+document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('.slider-section');
+
+    sections.forEach(section => {
+        const heading = section.querySelector('h4');
+        const list = section.querySelector('ul');
+
+        if (!heading || !list) return;
+
+        // Start collapsed
+        list.style.display = 'none';
+
+        heading.addEventListener('click', function () {
+            const isOpen = list.style.display === 'block';
+
+            // Close all other sections
+            sections.forEach(s => {
+                const ul = s.querySelector('ul');
+                if (ul) ul.style.display = 'none';
+            });
+
+            // Toggle this section
+            list.style.display = isOpen ? 'none' : 'block';
+        });
+    });
+
+    // Back links
+    const backLinks = document.querySelectorAll('.slider-back');
+    backLinks.forEach(back => {
+        back.addEventListener('click', function (e) {
+            e.preventDefault();
+            const section = back.closest('.slider-section');
+            const list = section && section.querySelector('ul');
+            if (list) list.style.display = 'none';
+        });
+    });
+});
+
+
+// =====================
+// SEARCH FUNCTIONALITY
+// =====================
 const searchBtn = document.getElementById('searchBtn');
 const searchInput = document.getElementById('searchInput');
 
 if (searchBtn && searchInput) {
-    searchBtn.addEventListener('click', function() {
+    searchBtn.addEventListener('click', function () {
         const searchQuery = searchInput.value.trim();
         if (searchQuery) {
             console.log('Search Query:', searchQuery);
-            // Add your search logic here
+            alert('Searching for: ' + searchQuery);
         } else {
             searchInput.focus();
         }
     });
 
-    // Allow Enter key to trigger search
-    searchInput.addEventListener('keypress', function(e) {
+    searchInput.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
             searchBtn.click();
         }
     });
 }
 
-// Language Switching
+// =====================
+// LANGUAGE SWITCHING
+// =====================
 const langButtons = document.querySelectorAll('.btn-lang');
 
 langButtons.forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
         const selectedLang = this.getAttribute('data-lang');
-        
-        // Remove active class from all buttons
         langButtons.forEach(b => b.classList.remove('active'));
-        
-        // Add active class to clicked button
         this.classList.add('active');
-        
-        // Store language preference
         localStorage.setItem('preferredLanguage', selectedLang);
-        
         console.log('Language changed to:', selectedLang === 'en' ? 'English' : 'Odia');
     });
 });
 
-// Set saved language on page load
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const savedLang = localStorage.getItem('preferredLanguage') || 'en';
     const savedButton = document.querySelector(`[data-lang="${savedLang}"]`);
     if (savedButton) {
@@ -75,282 +268,55 @@ window.addEventListener('load', function() {
     }
 });
 
-// Close mobile menu on window resize
-window.addEventListener('resize', function() {
-    if (window.innerWidth > 640 && headerTopNav) {
-        if (menuToggle) {
-            menuToggle.classList.remove('active');
-            headerTopNav.classList.remove('active');
+// =====================
+// HERO NEWS TICKER
+// =====================
+document.addEventListener('DOMContentLoaded', function () {
+    const newsItems = document.querySelectorAll('.news-ticker-item');
+
+    if (newsItems.length > 0) {
+        let currentIndex = 0;
+        const intervalTime = 6000; // 6 seconds
+
+        function showNextNews() {
+            newsItems[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % newsItems.length;
+            newsItems[currentIndex].classList.add('active');
         }
+
+        setInterval(showNextNews, intervalTime);
     }
 });
 
-// Logo images error handling
-document.addEventListener('DOMContentLoaded', function() {
+// =====================
+// HEADER LOGOS CLICKABLE
+// =====================
+document.addEventListener('DOMContentLoaded', function () {
+    const headerLogos = document.querySelector('.header-logos');
+
+    if (headerLogos) {
+        headerLogos.style.cursor = 'pointer';
+        headerLogos.title = 'Go to Home';
+
+        headerLogos.addEventListener('click', function (e) {
+            if (e.target === headerLogos || e.target.closest('.logo-circle')) {
+                window.location.href = 'index.html';
+            }
+        });
+    }
+});
+
+// =====================
+// LOGO ERROR HANDLING
+// =====================
+document.addEventListener('DOMContentLoaded', function () {
     const logoImages = document.querySelectorAll('.logo-circle img');
     logoImages.forEach((img, index) => {
-        img.addEventListener('error', function() {
+        img.addEventListener('error', function () {
             console.warn(`Logo ${index + 1} failed to load: ${this.src}`);
         });
-        img.addEventListener('load', function() {
+        img.addEventListener('load', function () {
             console.log(`Logo ${index + 1} loaded successfully`);
         });
     });
 });
-// ===== DROPDOWN MENU - CLICK TO OPEN/CLOSE =====
-document.addEventListener('DOMContentLoaded', function() {
-    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-
-    // Click on "Who We Are" only opens/closes the menu
-    dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
-            e.preventDefault(); // stop navigation only for the toggle
-
-            const parentItem = this.closest('.nav-item.dropdown');
-            const isActive = parentItem.classList.contains('active');
-
-            document.querySelectorAll('.nav-item.dropdown').forEach(item => {
-                item.classList.remove('active');
-            });
-
-            if (!isActive) {
-                parentItem.classList.add('active');
-            }
-        });
-    });
-
-    // Clicking outside closes dropdown
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('.nav-item.dropdown')) {
-            document.querySelectorAll('.nav-item.dropdown').forEach(item => {
-                item.classList.remove('active');
-            });
-        }
-    });
-
-    // Dropdown links (Mission, History...) CLOSE menu but STILL navigate
-    const dropdownLinks = document.querySelectorAll('.dropdown-link');
-    dropdownLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            document.querySelectorAll('.nav-item.dropdown').forEach(item => {
-                item.classList.remove('active');
-            });
-            // no preventDefault() here – browser will follow href
-        });
-    });
-});
-// ===== HERO SECTION - AUTO-ROTATE NEWS ITEMS (ONE AT A TIME) =====
-document.addEventListener('DOMContentLoaded', function() {
-    const newsItems = document.querySelectorAll('.news-ticker-item');
-    
-    if (newsItems.length > 0) {
-        let currentIndex = 0;
-        const intervalTime = 3000; // 3 seconds per item (matches animation duration)
-        
-        function showNextNews() {
-            // Remove active class from current item
-            newsItems[currentIndex].classList.remove('active');
-            
-            // Move to next item
-            currentIndex = (currentIndex + 1) % newsItems.length;
-            
-            // Add active class to next item
-            newsItems[currentIndex].classList.add('active');
-        }
-        
-        // Auto-rotate every 6 seconds
-        setInterval(showNextNews, intervalTime);
-        
-        // Optional: Pause on hover
-        // const tickerContainer = document.querySelector('.news-ticker-inline');
-        // let rotationInterval;
-        
-        // if (tickerContainer) {
-        //     tickerContainer.addEventListener('mouseenter', function() {
-        //         clearInterval(rotationInterval);
-        //     });
-            
-        //     tickerContainer.addEventListener('mouseleave', function() {
-        //         rotationInterval = setInterval(showNextNews, intervalTime);
-        //     });
-        // }
-    }
-});
-// ===== PHOTO GALLERY VIEW MORE / LESS =====
-document.addEventListener('DOMContentLoaded', function() {
-    const extraPhotos = document.querySelectorAll('.extra-photo');
-    const toggleBtn = document.getElementById('photoToggleBtn');
-
-    if (toggleBtn && extraPhotos.length > 0) {
-        let expanded = false;
-
-        toggleBtn.addEventListener('click', function() {
-            expanded = !expanded;
-
-            extraPhotos.forEach(card => {
-                card.style.display = expanded ? 'block' : 'none';
-            });
-
-            toggleBtn.textContent = expanded ? 'View Less' : 'View More';
-        });
-    }
-});
-// ===== VIDEO GALLERY NEXT / PREVIOUS =====
-document.addEventListener('DOMContentLoaded', function() {
-    const videoElement = document.getElementById('galleryVideo');
-    const btnPrev = document.getElementById('videoPrev');
-    const btnNext = document.getElementById('videoNext');
-
-    if (!videoElement || !btnPrev || !btnNext) return;
-
-    // List of video files (currently same video repeated)
-    const videos = [
-        'LALITAKALA_ACADEMY.mp4',
-        'LALITAKALA_ACADEMY.mp4', // replace with another file later
-        'LALITAKALA_ACADEMY.mp4'
-    ];
-
-    let currentIndex = 0;
-
-    function loadVideo(index) {
-        currentIndex = (index + videos.length) % videos.length;
-        videoElement.pause();
-        videoElement.setAttribute('src', videos[currentIndex]);
-        videoElement.load();
-        videoElement.play().catch(() => {});
-    }
-
-    btnNext.addEventListener('click', function() {
-        loadVideo(currentIndex + 1);
-    });
-
-    btnPrev.addEventListener('click', function() {
-        loadVideo(currentIndex - 1);
-    });
-});
-// ===== AWARDS TABS =====
-document.addEventListener('DOMContentLoaded', function() {
-    const tabs = document.querySelectorAll('.awards-tab');
-    const panels = document.querySelectorAll('.awards-panel');
-
-    if (!tabs.length) return;
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            const targetId = this.getAttribute('data-target');
-
-            tabs.forEach(t => t.classList.remove('active'));
-            panels.forEach(p => p.classList.remove('active'));
-
-            this.classList.add('active');
-            const targetPanel = document.getElementById(targetId);
-            if (targetPanel) {
-                targetPanel.classList.add('active');
-            }
-        });
-    });
-});
-// ===== EVENT IMAGE CAROUSELS =====
-document.addEventListener('DOMContentLoaded', function () {
-    const galleries = document.querySelectorAll('.event-gallery');
-
-    galleries.forEach(gallery => {
-        const images = gallery.querySelectorAll('.event-images img');
-        const prevBtn = gallery.querySelector('.event-arrow.prev');
-        const nextBtn = gallery.querySelector('.event-arrow.next');
-
-        if (!images.length) return;
-
-        let currentIndex = 0;
-
-        function showImage(index) {
-            images.forEach(img => img.classList.remove('active'));
-            currentIndex = (index + images.length) % images.length;
-            images[currentIndex].classList.add('active');
-        }
-
-        // For mobile (where only one image is shown)
-        const mq = window.matchMedia('(max-width: 1024px)');
-
-        function updateVisibility() {
-            if (mq.matches) {
-                // mobile/tablet: show only current image
-                images.forEach((img, idx) => {
-                    img.style.display = idx === currentIndex ? 'block' : 'none';
-                });
-            } else {
-                // desktop: show all images
-                images.forEach(img => {
-                    img.style.display = 'block';
-                });
-            }
-        }
-
-        mq.addEventListener('change', updateVisibility);
-        updateVisibility();
-
-        prevBtn.addEventListener('click', function () {
-            showImage(currentIndex - 1);
-            updateVisibility();
-        });
-
-        nextBtn.addEventListener('click', function () {
-            showImage(currentIndex + 1);
-            updateVisibility();
-        });
-    });
-});
-
-// ===== EVENTS PAGINATION =====
-document.addEventListener('DOMContentLoaded', function () {
-    const pages = document.querySelectorAll('.events-page');
-    const pageButtons = document.querySelectorAll('.page-number');
-    const prevBtn = document.querySelector('.page-prev');
-    const nextBtn = document.querySelector('.page-next');
-
-    if (!pages.length || !pageButtons.length) return;
-
-    function showPage(page) {
-        pages.forEach(p => {
-            p.classList.toggle('active', p.dataset.page === String(page));
-        });
-        pageButtons.forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.page === String(page));
-        });
-
-        const firstPage = Number(pageButtons[0].dataset.page);
-        const lastPage = Number(pageButtons[pageButtons.length - 1].dataset.page);
-
-        prevBtn.disabled = page <= firstPage;
-        nextBtn.disabled = page >= lastPage;
-        prevBtn.dataset.page = String(page - 1);
-        nextBtn.dataset.page = String(page + 1);
-    }
-
-    pageButtons.forEach(btn => {
-        btn.addEventListener('click', function () {
-            const p = Number(this.dataset.page);
-            showPage(p);
-        });
-    });
-
-    prevBtn.addEventListener('click', function () {
-        if (this.disabled) return;
-        const p = Number(this.dataset.page);
-        showPage(p);
-    });
-
-    nextBtn.addEventListener('click', function () {
-        if (this.disabled) return;
-        const p = Number(this.dataset.page);
-        showPage(p);
-    });
-
-    // initial
-    showPage(1);
-});
-
-
-
-
-

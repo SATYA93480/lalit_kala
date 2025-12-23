@@ -16,7 +16,7 @@
                 <ul id="menu-top-nav" class="header_top_nav">
                     <li><a href="#" class="nav-link">Login or Register</a></li>
                     <li><span class="nav-divider">/</span></li>
-                    <li><a href="contact-us.html" class="nav-link">Contact</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
                 </ul>
                 <div class="language-btn-group">
                     <button class="btn-lang active" data-lang="en">EN</button>
@@ -40,7 +40,7 @@
     </header>
 
     <!-- SAME MAIN HEADER WITH LOGOS -->
-    <header class="header-main">
+<header class="header-main">
         <div class="header-container">
             <div class="header-logos">
                 <div class="logo-circle">
@@ -99,64 +99,152 @@
     </header>
 
     <!-- SAME HERO SECTION - MISSION CONTENT -->
-<!-- HERO SECTION FOR ACTIVITIES PAGE -->
-<section class="hero-section history-hero">
+<section class="hero-section mission-hero">
     <div class="hero-container">
         <div class="hero-content">
             <div class="news-ticker-inline">
                 <div class="news-ticker-item active">
                     <div class="news-content">
-                        <h1 class="scroll-title">Gallery Booking</h1>
+                        <h1 class="scroll-title">Login or Register</h1>
                     </div>
                 </div>
             </div>
-            <!-- No button, like mission banner -->
+            <!-- No button for now, like your reference -->
         </div>
     </div>
 </section>
-  <section class="mission-main activities-main gallery-main">
-    <div class="mission-container activities-container">
-        <!-- Heading + intro (same style as Publications) -->
-        <div class="activities-intro">
-            <h2 class="mission-heading">Gallery Booking</h2>
-            <div class="mission-underline"></div>
 
-            <p class="mission-paragraph">
-                Art galleries managed by Odisha Lalit Kala Akademi can be booked for exhibitions and cultural programmes as per the following details.
-            </p>
+
+ <!-- ===== LOGIN & REGISTER SECTION (BELOW HERO, ABOVE FOOTER) ===== -->
+<section class="auth-main">
+    <div class="auth-container">
+
+        <!-- LEFT COLUMN – LOGIN -->
+        <div class="auth-login-panel">
+            <h2 class="auth-heading">login</h2>
+            <div class="auth-heading-underline"></div>
+
+            <form class="auth-form" id="loginForm">
+                <div class="auth-field">
+                    <label for="login-username">
+                        username or email address <span class="required">*</span>
+                    </label>
+                    <input type="text" id="login-username" name="username" required>
+                </div>
+
+                <div class="auth-field auth-password-field">
+                    <label for="login-password">
+                        password <span class="required">*</span>
+                    </label>
+                    <div class="auth-password-wrapper">
+                        <input type="password" id="login-password" name="password" required>
+                        <button type="button" class="password-toggle"
+                                data-target="login-password" aria-label="Show password">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Success / captcha style box -->
+                <div class="auth-success-box">
+                    <div class="auth-success-icon">✔</div>
+                    <div class="auth-success-text">Success!</div>
+                    <div class="auth-success-badge">CLOUDFLARE</div>
+                </div>
+
+                <div class="auth-checkbox-row">
+                    <label class="auth-checkbox">
+                        <input type="checkbox" id="rememberMe">
+                        <span>remember me</span>
+                    </label>
+                </div>
+
+                <div class="auth-button-row">
+                    <button type="submit" class="auth-btn auth-btn-primary">log in</button>
+                </div>
+
+                <p class="auth-link-row">
+                    <a href="#" id="lostPasswordLink">lost your password?</a>
+                </p>
+            </form>
         </div>
 
-        <!-- Table of galleries -->
-        <div class="gallery-table-wrapper">
-            <table class="gallery-table">
-                <thead>
-                    <tr>
-                        <th>Sl. No.</th>
-                        <th>Name of the Gallery</th>
-                        <th>Address</th>
-                        <th>Booking Form</th>
-                        <th>Regulation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Row 1 example -->
-                    <tr>
-                        <td>1</td>
-                        <td>Odisha Lalit Kala Akademi Gallery</td>
-                        <td>Bhubaneswar, Odisha</td>
-                        <td>
-                            <a href="pdfs/gallery-booking-form.pdf" target="_blank">Download</a>
-                        </td>
-                        <td>
-                            <a href="pdfs/gallery-regulation.pdf" target="_blank">View</a>
-                        </td>
-                    </tr>
-                    <!-- Add more rows as needed -->
-                </tbody>
-            </table>
+        <!-- RIGHT COLUMN – VIDEO + REGISTER -->
+        <div class="auth-right-column">
+
+            <!-- VIDEO CONTENT BOX -->
+            <section class="auth-video-card">
+                <div class="auth-video-header">
+                    <h3 class="auth-video-title">odisha lalit kala akademi</h3>
+                    <p class="auth-video-subtitle">
+                        glimpse of our exhibitions, workshops & artist camps
+                    </p>
+                </div>
+
+                <div class="auth-video-frame">
+                    <!-- YouTube embed; replace id if needed -->
+                    <iframe
+                        src="https://www.youtube.com/embed/gIdJDL_rDHU"
+                        title="Odisha Lalit Kala Akademi"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write;
+                               encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <p class="auth-video-text">
+                    Watch highlights from recent programmes showcasing Odisha’s visual arts,
+                    tribal painting exhibitions, and artist interactions hosted by the Akademi.
+                </p>
+            </section>
+
+            <!-- REGISTER BLOCK -->
+            <section class="auth-register-panel">
+                <h2 class="auth-heading">register</h2>
+                <div class="auth-heading-underline"></div>
+
+                <form class="auth-form" id="registerForm">
+                    <div class="auth-field">
+                        <label for="reg-email">
+                            email address <span class="required">*</span>
+                        </label>
+                        <input type="email" id="reg-email" name="email" required>
+                    </div>
+
+                    <p class="auth-helper-text">
+                        A link to set a new password will be sent to your email address.
+                    </p>
+
+                    <div class="auth-success-box">
+                        <div class="auth-success-icon">✔</div>
+                        <div class="auth-success-text">Success!</div>
+                        <div class="auth-success-badge">CLOUDFLARE</div>
+                    </div>
+
+                    <label class="auth-checkbox auth-newsletter">
+                        <input type="checkbox" id="newsletter" checked>
+                        <span>yes, i would like to receive email from the akademi.</span>
+                    </label>
+
+                    <p class="auth-privacy-text">
+                        Your personal data will be used to support your experience throughout this website,
+                        to manage access to your account, and for other purposes described in our
+                        <a href="privacy.html">privacy policy</a>.
+                    </p>
+
+                    <div class="auth-button-row">
+                        <button type="submit" class="auth-btn auth-btn-primary">register</button>
+                    </div>
+                </form>
+            </section>
         </div>
     </div>
+
+    <!-- toast for demo messages -->
+    <div class="auth-toast" id="authToast"></div>
 </section>
+
 
 
     <!-- SAME FOOTER -->
