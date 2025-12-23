@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission - Lalit Kala Akademi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
     <!-- SAME TOP NAVBAR -->
     <header class="navbar">
@@ -14,9 +18,9 @@
             <div class="navbar-left"></div>
             <div class="navbar-right">
                 <ul id="menu-top-nav" class="header_top_nav">
-                    <li><a href="login-register.html" class="nav-link">Login or Register</a></li>
+                    <li class="text-light"><a href="login-register.html" class="nav-link">Login or Register</a></li>
                     <li><span class="nav-divider">/</span></li>
-                    <li><a href="contact-us.html" class="nav-link">Contact</a></li>
+                    <li class="text-light"><a href="contact-us.html" class="nav-link">Contact</a></li>
                 </ul>
                 <div class="language-btn-group">
                     <button class="btn-lang active" data-lang="en">EN</button>
@@ -26,7 +30,8 @@
                 <div class="search-container">
                     <input type="text" class="search-input" placeholder="SEARCH" id="searchInput">
                     <button class="search-btn" id="searchBtn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <circle cx="11" cy="11" r="8"></circle>
                             <path d="m21 21-4.35-4.35"></path>
                         </svg>
@@ -40,17 +45,20 @@
     </header>
 
     <!-- SAME MAIN HEADER WITH LOGOS -->
-<header class="header-main">
+    <header class="header-main">
         <div class="header-container">
             <div class="header-logos">
                 <div class="logo-circle">
-                    <img src="odishalogo.png" alt="Odisha Logo" onerror="this.src='https://via.placeholder.com/120x120/0B3E66/FFFFFF?text=OL'">
+                    <img src="odishalogo.png" alt="Odisha Logo"
+                        onerror="this.src='https://via.placeholder.com/120x120/0B3E66/FFFFFF?text=OL'">
                 </div>
                 <div class="logo-circle">
-                    <img src="lalitakala.png" alt="Lalit Kala Logo" onerror="this.src='https://via.placeholder.com/120x120/0B3E66/FFFFFF?text=LK'">
+                    <img src="lalitakala.png" alt="Lalit Kala Logo"
+                        onerror="this.src='https://via.placeholder.com/120x120/0B3E66/FFFFFF?text=LK'">
                 </div>
                 <div class="logo-circle">
-                    <img src="culture.png" alt="Culture Logo" onerror="this.src='https://via.placeholder.com/120x120/0B3E66/FFFFFF?text=CL'">
+                    <img src="culture.png" alt="Culture Logo"
+                        onerror="this.src='https://via.placeholder.com/120x120/0B3E66/FFFFFF?text=CL'">
                 </div>
             </div>
             <div class="header-title-section">
@@ -64,7 +72,8 @@
                         <a href="mission.html" class="nav-link-main dropdown-toggle">
                             Who We Are
                             <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
                             </svg>
                         </a>
                         <ul class="dropdown-menu">
@@ -74,566 +83,620 @@
                             <!-- <li><a href="#policies" class="dropdown-link">Policies</a></li> -->
                         </ul>
                     </li>
-                   <li class="nav-item dropdown">
-    <a href="#" class="nav-link-main dropdown-toggle">
-        Publication
-        <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
-            <path d="M1 1L5 5L9 1"
-                  stroke="currentColor" stroke-width="1.5"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </a>
-    <ul class="dropdown-menu">
-        <li><a href="publication.html" class="dropdown-link">Publication</a></li>
-        <li><a href="magazines.html" class="dropdown-link">Magazines</a></li>
-        <li><a href="achievements.html" class="dropdown-link">Achievements</a></li>
-        <li><a href="art-odisha-glance.html" class="dropdown-link">Art of Odisha at a Glance</a></li>
-    </ul>
-</li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link-main dropdown-toggle">
+                            Publication
+                            <svg class="dropdown-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="publication.html" class="dropdown-link">Publication</a></li>
+                            <li><a href="magazines.html" class="dropdown-link">Magazines</a></li>
+                            <li><a href="achievements.html" class="dropdown-link">Achievements</a></li>
+                            <li><a href="art-odisha-glance.html" class="dropdown-link">Art of Odisha at a Glance</a>
+                            </li>
+                        </ul>
+                    </li>
 
                     <li class="nav-item"><a href="#" class="nav-link-main">Join</a></li>
-<li class="nav-item more-toggle-item">
-    <button class="nav-link-main more-toggle" id="moreToggle">
-        <span></span><span></span><span></span>
-    </button>
-</li>
+                    <li class="nav-item more-toggle-item">
+                        <button class="nav-link-main more-toggle" id="moreToggle">
+                            <span></span><span></span><span></span>
+                        </button>
+                    </li>
 
                 </ul>
             </nav>
             <!-- COMPLETE MORE SLIDER - ALL SECTIONS -->
-<div class="more-slider" id="moreSlider">
-    <div class="more-slider-header">
-        <button class="more-close" id="moreClose">×</button>
-    </div>
-    
-    <!-- 1. MEDIA GALLERY -->
-   <!-- 1. MEDIA GALLERY -->
-<div class="slider-section">
-  <h4>MEDIA GALLERY <i class="fas fa-chevron-right"></i></h4>
-  <ul>
-    <li><a href="#" class="slider-back">← Back</a></li>
-    <li><a href="photo-gallery.html">📸 Photo Gallery</a></li>
-    <li><a href="video-gallery.html">🎥 Video Gallery</a></li>
-  </ul>
-</div>
+            <div class="more-slider" id="moreSlider">
+                <div class="more-slider-header">
+                    <button class="more-close" id="moreClose">×</button>
+                </div>
 
-<!-- 2. ABOUT US -->
-<div class="slider-section">
-  <h4>ABOUT US <i class="fas fa-chevron-right"></i></h4>
-  <ul>
-    <li><a href="#" class="slider-back">← Back</a></li>
-    <li><a href="about-lalitkala.html">About Lalit Kala</a></li>
-    <li><a href="staffing-pattern.html">Staffing Pattern</a></li>
-    <li><a href="artist-database.html">Artist Database</a></li>
-    <li><a href="contact-us.html">Contact Us</a></li>
-  </ul>
-</div>
+                <!-- 1. MEDIA GALLERY -->
+                <!-- 1. MEDIA GALLERY -->
+                <div class="slider-section">
+                    <h4>MEDIA GALLERY <i class="fas fa-chevron-right"></i></h4>
+                    <ul>
+                        <li><a href="#" class="slider-back">← Back</a></li>
+                        <li><a href="photo-gallery.html">📸 Photo Gallery</a></li>
+                        <li><a href="video-gallery.html">🎥 Video Gallery</a></li>
+                    </ul>
+                </div>
 
-<!-- 3. PUBLICATION -->
-<div class="slider-section">
-  <h4>PUBLICATION <i class="fas fa-chevron-right"></i></h4>
-  <ul>
-    <li><a href="#" class="slider-back">← Back</a></li>
-    <li><a href="publication.html">Publication</a></li>
-    <li><a href="magazines.html">Magazine</a></li>
-    <li><a href="achievements.html">Achievements</a></li>
-    <li><a href="art-odisha-glance.html">Art of Odisha at Glance</a></li>
-  </ul>
-</div>
+                <!-- 2. ABOUT US -->
+                <div class="slider-section">
+                    <h4>ABOUT US <i class="fas fa-chevron-right"></i></h4>
+                    <ul>
+                        <li><a href="#" class="slider-back">← Back</a></li>
+                        <li><a href="about-lalitkala.html">About Lalit Kala</a></li>
+                        <li><a href="staffing-pattern.html">Staffing Pattern</a></li>
+                        <li><a href="artist-database.html">Artist Database</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
 
-<!-- 4. NOTIFICATIONS -->
-<div class="slider-section">
-  <h4>NOTIFICATIONS <i class="fas fa-chevron-right"></i></h4>
-  <ul>
-    <li><a href="#" class="slider-back">← Back</a></li>
-    <li><a href="awards-felicitation.html">Awards & Felicitation</a></li>
-    <li><a href="plans-programmes.html">Plans & Programmes</a></li>
-    <li><a href="announcement.html">Announcement</a></li>
-    <li><a href="advertisement.html">Advertisement</a></li>
-    <li><a href="tender-notice.html">Tender Notice</a></li>
-    <li><a href="events.html">Events</a></li>
-  </ul>
-</div>
-</div>
+                <!-- 3. PUBLICATION -->
+                <div class="slider-section">
+                    <h4>PUBLICATION <i class="fas fa-chevron-right"></i></h4>
+                    <ul>
+                        <li><a href="#" class="slider-back">← Back</a></li>
+                        <li><a href="publication.html">Publication</a></li>
+                        <li><a href="magazines.html">Magazine</a></li>
+                        <li><a href="achievements.html">Achievements</a></li>
+                        <li><a href="art-odisha-glance.html">Art of Odisha at Glance</a></li>
+                    </ul>
+                </div>
+
+                <!-- 4. NOTIFICATIONS -->
+                <div class="slider-section">
+                    <h4>NOTIFICATIONS <i class="fas fa-chevron-right"></i></h4>
+                    <ul>
+                        <li><a href="#" class="slider-back">← Back</a></li>
+                        <li><a href="awards-felicitation.html">Awards & Felicitation</a></li>
+                        <li><a href="plans-programmes.html">Plans & Programmes</a></li>
+                        <li><a href="announcement.html">Announcement</a></li>
+                        <li><a href="advertisement.html">Advertisement</a></li>
+                        <li><a href="tender-notice.html">Tender Notice</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </div>
+            </div>
+            
         </div>
     </header>
     <!-- Hero Section -->
-<!-- Hero Section -->
-<section class="hero-section">
-    <div class="hero-container">
-        <!-- Hero Content -->
-        <div class="hero-content">
-            <!-- News Ticker - Title + Content Scrolls Together -->
-            <div class="news-ticker-inline">
-                <!-- News Item 1 -->
-                <div class="news-ticker-item active">
-                    <div class="news-content">
-                        <h1 class="scroll-title">Odisha Art & Culture</h1>
-                        <div class="news-bullet">● Artist Workshop Registration Now Open - January 2026</div>
-                        <p class="news-subtitle">Join our upcoming workshop series featuring renowned artists from across India. Limited seats available.</p>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <!-- News Ticker - Title + Content Scrolls Together -->
+                <div class="news-ticker-inline">
+                    <!-- News Item 1 -->
+                    <div class="news-ticker-item active">
+                        <div class="news-content">
+                            <h1 class="scroll-title">Odisha Art & Culture</h1>
+                            <div class="news-bullet">● Artist Workshop Registration Now Open - January 2026</div>
+                            <p class="news-subtitle">Join our upcoming workshop series featuring renowned artists from
+                                across India. Limited seats available.</p>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- News Item 2 -->
-                <div class="news-ticker-item">
-                    <div class="news-content">
-                        <h1 class="scroll-title">Cultural Festival 2026</h1>
-                        <div class="news-bullet">● Annual Cultural Festival Announced - March 15-20, 2026</div>
-                        <p class="news-subtitle">Experience six days of art exhibitions, live performances, and cultural celebrations showcasing Odisha's rich heritage.</p>
-                    </div>
-                </div>
-                
-                <!-- News Item 3 -->
-                <div class="news-ticker-item">
-                    <div class="news-content">
-                        <h1 class="scroll-title">Scholarship Program</h1>
-                        <div class="news-bullet">● Scholarship Applications Available for Young Artists</div>
-                        <p class="news-subtitle">Supporting emerging talent with financial assistance and mentorship programs. Apply before December 31, 2025.</p>
-                    </div>
-                </div>
-                
-                <!-- News Item 4 -->
-                <div class="news-ticker-item">
-                    <div class="news-content">
-                        <h1 class="scroll-title">Contemporary Art Exhibition</h1>
-                        <div class="news-bullet">● New Exhibition: Contemporary Odisha Art - Opens January 15, 2026</div>
-                        <p class="news-subtitle">Discover modern interpretations of traditional Odia art forms by contemporary artists.</p>
-                    </div>
-                </div>
-                
-                <!-- News Item 5 -->
-                <div class="news-ticker-item">
-                    <div class="news-content">
-                        <h1 class="scroll-title">Artist Residency Program</h1>
-                        <div class="news-bullet">● Artist Residency Program - Applications Open</div>
-                        <p class="news-subtitle">Three-month residency program offering studio space, materials, and exhibition opportunities for selected artists.</p>
-                    </div>
-                </div>
-                
-                <!-- News Item 6 -->
-                <div class="news-ticker-item">
-                    <div class="news-content">
-                        <h1 class="scroll-title">Traditional Pattachitra Workshop</h1>
-                        <div class="news-bullet">● Traditional Pattachitra Workshop - February 2026</div>
-                        <p class="news-subtitle">Learn the ancient art of Pattachitra painting from master craftsmen. Beginner-friendly sessions available.</p>
-                    </div>
-                </div>
-                
-                <!-- News Item 7 -->
-                <div class="news-ticker-item">
-                    <div class="news-content">
-                        <h1 class="scroll-title">Gallery Renovation Update</h1>
-                        <div class="news-bullet">● Art Gallery Renovation Completed</div>
-                        <p class="news-subtitle">Our newly renovated gallery space now features state-of-the-art lighting and climate control systems.</p>
-                    </div>
-                </div>
-                
-                <!-- News Item 8 -->
-                <div class="news-ticker-item">
-                    <div class="news-content">
-                        <h1 class="scroll-title">Youth Art Competition</h1>
-                        <div class="news-bullet">● Youth Art Competition 2026 - Registration Started</div>
-                        <p class="news-subtitle">Calling all young artists aged 15-25! Showcase your talent and win exciting prizes and recognition.</p>
-                    </div>
-                </div>
-                
-                <!-- News Item 9 -->
-                <div class="news-ticker-item">
-                    <div class="news-content">
-                        <h1 class="scroll-title">Heritage Conservation</h1>
-                        <div class="news-bullet">● Heritage Art Conservation Workshop - January 25, 2026</div>
-                        <p class="news-subtitle">Learn preservation techniques for traditional artworks from conservation experts.</p>
-                    </div>
-                </div>
-                
-                <!-- News Item 10 -->
-                <div class="news-ticker-item">
-                    <div class="news-content">
-                        <h1 class="scroll-title">Digital Art Initiative</h1>
-                        <div class="news-bullet">● New Digital Art Platform Launched</div>
-                        <p class="news-subtitle">Explore and purchase digital artworks from Odisha artists on our new online platform.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <a href="#explore" class="hero-btn">READ MORE</a>
-        </div>
-    </div>
-</section>
-<!-- Hero Footer Section -->
-<section class="hero-footer">
-    <div class="hero-footer-container">
-        <a href="academy-bylaw.html" class="footer-card footer-card-1">
-            <h3 class="footer-card-title">Academy By Law</h3>
-        </a>
-        <a href="art-forms.html" class="footer-card footer-card-2">
-            <h3 class="footer-card-title">Types of ART Forms</h3>
-        </a>
-        <a href="artist-database.html" class="footer-card footer-card-3">
-            <h3 class="footer-card-title">Artist Database</h3>
-        </a>
-    </div>
-</section>
-<!-- AIA Content Section -->
-<section class="aia-content">
-    <div class="aia-content-wrapper">
-        <!-- Top Row - 3 Cards -->
-        <div class="aia-top-row">
-            <!-- AIA e-update Card -->
-            <div class="aia-card aia-update">
-                <div class="aia-card-overlay">
-   <h2 class="aia-card-heading">
-    <span class="aia-heading-italic">culture</span> e-update
-</h2>
 
-
-
-                    <div class="aia-card-text">
-                        <p class="aia-description">The latest news and important announcements from AIA HQ are highlighted in the e-Update, our monthly email newsletter. Subscribe to the e-Update to stay connected with everything going on at the AIA.</p>
+                    <!-- News Item 2 -->
+                    <div class="news-ticker-item">
+                        <div class="news-content">
+                            <h1 class="scroll-title">Cultural Festival 2026</h1>
+                            <div class="news-bullet">● Annual Cultural Festival Announced - March 15-20, 2026</div>
+                            <p class="news-subtitle">Experience six days of art exhibitions, live performances, and
+                                cultural celebrations showcasing Odisha's rich heritage.</p>
+                        </div>
                     </div>
-                    <a href="newsletter.html" class="aia-btn aia-btn-blue">CONNECT</a>
-                </div>
-            </div>
 
-            <!-- Become a Member Card -->
-            <div class="aia-card aia-member">
-                <div class="aia-card-overlay">
-                    <h2 class="aia-card-heading">
-    <span class="aia-heading-italic">become a</span> Member
-</h2>
-
-
-                    <div class="aia-card-text">
-                        <p class="aia-description">When you join the Archaeological Institute of America, you'll be joining a group of individuals passionate about archaeology, protecting the world's cultural heritage, and disseminating archaeological research.</p>
+                    <!-- News Item 3 -->
+                    <div class="news-ticker-item">
+                        <div class="news-content">
+                            <h1 class="scroll-title">Scholarship Program</h1>
+                            <div class="news-bullet">● Scholarship Applications Available for Young Artists</div>
+                            <p class="news-subtitle">Supporting emerging talent with financial assistance and mentorship
+                                programs. Apply before December 31, 2025.</p>
+                        </div>
                     </div>
-                    <a href="membership.html" class="aia-btn aia-btn-orange">JOIN</a>
-                </div>
-            </div>
 
-            <!-- Support Us Card -->
-            <div class="aia-card aia-support">
-                <div class="aia-card-overlay">
-                    <h2 class="aia-card-heading">
-    <span class="aia-heading-italic">support</span> Us
-</h2>
-
-
-                    <div class="aia-card-text">
-                        <p class="aia-description">The AIA is North America's largest and oldest nonprofit organization dedicated to archaeology. The Institute advances awareness, education, fieldwork, preservation, publication, and research of archaeological sites and cultural heritage throughout the world. Your contribution makes a difference.</p>
+                    <!-- News Item 4 -->
+                    <div class="news-ticker-item">
+                        <div class="news-content">
+                            <h1 class="scroll-title">Contemporary Art Exhibition</h1>
+                            <div class="news-bullet">● New Exhibition: Contemporary Odisha Art - Opens January 15, 2026
+                            </div>
+                            <p class="news-subtitle">Discover modern interpretations of traditional Odia art forms by
+                                contemporary artists.</p>
+                        </div>
                     </div>
-                    <a href="donate.html" class="aia-btn aia-btn-blue">READ MORE</a>
+
+                    <!-- News Item 5 -->
+                    <div class="news-ticker-item">
+                        <div class="news-content">
+                            <h1 class="scroll-title">Artist Residency Program</h1>
+                            <div class="news-bullet">● Artist Residency Program - Applications Open</div>
+                            <p class="news-subtitle">Three-month residency program offering studio space, materials, and
+                                exhibition opportunities for selected artists.</p>
+                        </div>
+                    </div>
+
+                    <!-- News Item 6 -->
+                    <div class="news-ticker-item">
+                        <div class="news-content">
+                            <h1 class="scroll-title">Traditional Pattachitra Workshop</h1>
+                            <div class="news-bullet">● Traditional Pattachitra Workshop - February 2026</div>
+                            <p class="news-subtitle">Learn the ancient art of Pattachitra painting from master
+                                craftsmen. Beginner-friendly sessions available.</p>
+                        </div>
+                    </div>
+
+                    <!-- News Item 7 -->
+                    <div class="news-ticker-item">
+                        <div class="news-content">
+                            <h1 class="scroll-title">Gallery Renovation Update</h1>
+                            <div class="news-bullet">● Art Gallery Renovation Completed</div>
+                            <p class="news-subtitle">Our newly renovated gallery space now features state-of-the-art
+                                lighting and climate control systems.</p>
+                        </div>
+                    </div>
+
+                    <!-- News Item 8 -->
+                    <div class="news-ticker-item">
+                        <div class="news-content">
+                            <h1 class="scroll-title">Youth Art Competition</h1>
+                            <div class="news-bullet">● Youth Art Competition 2026 - Registration Started</div>
+                            <p class="news-subtitle">Calling all young artists aged 15-25! Showcase your talent and win
+                                exciting prizes and recognition.</p>
+                        </div>
+                    </div>
+
+                    <!-- News Item 9 -->
+                    <div class="news-ticker-item">
+                        <div class="news-content">
+                            <h1 class="scroll-title">Heritage Conservation</h1>
+                            <div class="news-bullet">● Heritage Art Conservation Workshop - January 25, 2026</div>
+                            <p class="news-subtitle">Learn preservation techniques for traditional artworks from
+                                conservation experts.</p>
+                        </div>
+                    </div>
+
+                    <!-- News Item 10 -->
+                    <div class="news-ticker-item">
+                        <div class="news-content">
+                            <h1 class="scroll-title">Digital Art Initiative</h1>
+                            <div class="news-bullet">● New Digital Art Platform Launched</div>
+                            <p class="news-subtitle">Explore and purchase digital artworks from Odisha artists on our
+                                new online platform.</p>
+                        </div>
+                    </div>
                 </div>
+
+                <a href="#explore" class="hero-btn">READ MORE</a>
             </div>
         </div>
-
-        <!-- Bottom Row - Latest News + Facebook -->
-        <div class="aia-bottom-row">
-            <!-- Latest News Card -->
-            <div class="aia-card aia-news">
-                <div class="aia-card-overlay">
-                     <h2 class="aia-card-heading">
-    <span class="aia-heading-italic">latest</span> News
-</h2>
-
-
-                    <div class="aia-card-text">
-                        <p class="aia-news-item">Field School Scholar Spotlight: Alexandria Crosby</p>
-                        <p class="aia-news-item">2026 AIA Awards Spotlight – Excellence in Undergraduate Teaching Award</p>
-                        <p class="aia-news-item">Discover the Griffin Warrior of Pylos at the 2026 Annual Meeting</p>
-                    </div>
-                    <a href="news.html" class="aia-btn aia-btn-blue">READ MORE</a>
-                </div>
-            </div>
-
-            <!-- Facebook Page Embed -->
-           <!-- Facebook Page Placeholder -->
-<div class="aia-facebook-embed">
-    <div class="facebook-placeholder">
-        <div class="facebook-header">
-            <div class="fb-logo-circle">
-                <img src="lalitakala.png" alt="Odisha Lalit Kala Akademi" class="fb-logo">
-            </div>
-            <div class="fb-info">
-                <h3 class="fb-title">Odisha Lalit Kala Akademi</h3>
-                <p class="fb-followers">Connect with us • Follow for updates</p>
-            </div>
-        </div>
-        
-        <div class="facebook-content">
-            <div class="fb-posts">
-                <div class="fb-post-item">
-                    <div class="fb-post-header">
-                        <strong>Odisha Lalit Kala Akademi</strong>
-                        <span class="fb-post-time">2 days ago</span>
-                    </div>
-                    <p class="fb-post-text">🎨 Artist Workshop Registration Now Open - Join our upcoming workshop series featuring renowned artists from across India. Limited seats available!</p>
-                </div>
-                
-                <div class="fb-post-item">
-                    <div class="fb-post-header">
-                        <strong>Odisha Lalit Kala Akademi</strong>
-                        <span class="fb-post-time">5 days ago</span>
-                    </div>
-                    <p class="fb-post-text">🌟 Annual Cultural Festival Announced - March 15-20, 2026. Experience six days of art exhibitions and cultural celebrations!</p>
-                </div>
-                
-                <div class="fb-post-item">
-                    <div class="fb-post-header">
-                        <strong>Odisha Lalit Kala Akademi</strong>
-                        <span class="fb-post-time">1 week ago</span>
-                    </div>
-                    <p class="fb-post-text">✨ New Exhibition Opening: Contemporary Odisha Art - January 15, 2026. Don't miss this spectacular showcase!</p>
-                </div>
-            </div>
-            
-            <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" class="fb-follow-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-                Follow Us on Facebook
+    </section>
+    <!-- Hero Footer Section -->
+    <section class="hero-footer">
+        <div class="hero-footer-container">
+            <a href="academy-bylaw.html" class="footer-card footer-card-1">
+                <h3 class="footer-card-title">Academy By Law</h3>
+            </a>
+            <a href="art-forms.html" class="footer-card footer-card-2">
+                <h3 class="footer-card-title">Types of ART Forms</h3>
+            </a>
+            <a href="artist-database.html" class="footer-card footer-card-3">
+                <h3 class="footer-card-title">Artist Database</h3>
             </a>
         </div>
-    </div>
-</div>
+    </section>
+    <!-- AIA Content Section -->
+    <section class="aia-content">
+        <div class="aia-content-wrapper">
+            <!-- Top Row - 3 Cards -->
+            <div class="aia-top-row">
+                <!-- AIA e-update Card -->
+                <div class="aia-card aia-update">
+                    <div class="aia-card-overlay">
+                        <h2 class="aia-card-heading">
+                            culture <span class="aia-heading-italic">e-update</span>
+                        </h2>
 
-        </div>
-    </div>
-</section>
-<!-- Upcoming Events Section -->
-<section class="upcoming-events">
-    <div class="events-container">
-        <!-- Section Title -->
-        <div class="events-header">
-            <h2 class="events-title">
-                <span class="events-title-italic">upcoming</span>
-                <span class="events-title-caps"> EVENTS</span>
-            </h2>
-            <div class="events-underline"></div>
-        </div>
 
-        <!-- Events Grid -->
-        <div class="events-grid">
-            <!-- Event Card 1 -->
-            <div class="event-card">
-                <div class="event-date">December 27, 2025</div>
-                <div class="event-content">
-                    <p class="event-type">LECTURE</p>
-                    <h3 class="event-title">Battlefield Archaeology</h3>
+
+
+                        <div class="aia-card-text">
+                            <p class="aia-description">The latest news and important announcements from AIA HQ are
+                                highlighted in the e-Update, our monthly email newsletter. Subscribe to the e-Update to
+                                stay connected with everything going on at the AIA.</p>
+                        </div>
+                        <a href="newsletter.html" class="aia-btn aia-btn-blue">CONNECT</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Event Card 2 -->
-            <div class="event-card">
-                <div class="event-date">January 11, 2026</div>
-                <div class="event-content">
-                    <p class="event-type">LECTURE</p>
-                    <h3 class="event-title">Zoom Lecture: Forgotten Saint-Simonian Travelers In Egypt</h3>
-                </div>
-            </div>
+                <!-- Become a Member Card -->
+                <div class="aia-card aia-member">
+                    <div class="aia-card-overlay">
+                        <h2 class="aia-card-heading">
+                            <span class="aia-heading-italic">become a</span> Member
+                        </h2>
 
-            <!-- Event Card 3 -->
-            <div class="event-card">
-                <div class="event-date">January 15, 2026</div>
-                <div class="event-content">
-                    <p class="event-type">LECTURE</p>
-                    <h3 class="event-title">Early Peoples In The Plateau: Nimiipuu Knowledge And Landscape Adaptation In The Bitterroot Mountains</h3>
-                    <p class="event-location">Spokane, WA</p>
-                </div>
-            </div>
 
-            <!-- Event Card 4 -->
-            <div class="event-card">
-                <div class="event-date">January 18, 2026</div>
-                <div class="event-content">
-                    <p class="event-type">LECTURE</p>
-                    <h3 class="event-title">The Southern Mani Archaeological Project: Fieldwork At The End Of The World</h3>
-                    <p class="event-location">Ottawa, Canada</p>
+                        <div class="aia-card-text">
+                            <p class="aia-description">When you join the Archaeological Institute of America, you'll be
+                                joining a group of individuals passionate about archaeology, protecting the world's
+                                cultural heritage, and disseminating archaeological research.</p>
+                        </div>
+                        <a href="membership.html" class="aia-btn aia-btn-orange">JOIN</a>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Explore More Events Banner -->
-<section class="explore-events-banner">
-    <div class="events-container">
-        <a href="events.html" class="explore-link">
-            <div class="explore-overlay">
-                <h2 class="explore-text">EXPLORE MORE EVENTS ›</h2>
-            </div>
-        </a>
-    </div>
-</section>
-<!-- Publications Section -->
-<section class="publications-section">
-    <div class="publications-container">
-        <!-- Left Card - Magazine -->
-        <div class="publication-card">
-            <div class="publication-image" style="background-image: url('mag.jpg');">
-                <div class="publication-overlay">
-                    <h2 class="publication-title">
-                        <span class="title-italic">art & culture</span> 
-                        <span class="title-caps"><span class="first-letter">M</span>AGAZINE</span>
-                    </h2>
-                    <p class="publication-description">
-                        ART & CULTURE has been published continuously by the Odisha Lalit Kala Academy, which is dedicated to supporting artistic inquiry and to fostering the pursuit of knowledge about Odisha's rich cultural heritage. The January/February 2026 issue features the Top 10 Art Exhibitions of 2025. Other stories include the origins of Pattachitra art, traditional sculptures of Konark, and the revival of classical Odissi dance forms.
-                    </p>
-                    <div class="publication-buttons">
-                        <a href="magazine.html" class="btn-blue">EXPLORE THE MAGAZINE</a>
-                        <a href="archive.html" class="btn-orange">SEARCH THE ARCHIVE</a>
+
+                <!-- Support Us Card -->
+                <div class="aia-card aia-support">
+                    <div class="aia-card-overlay">
+                        <h2 class="aia-card-heading">
+                            <span class="aia-heading-italic">support</span> Us
+                        </h2>
+
+
+                        <div class="aia-card-text">
+                            <p class="aia-description">The AIA is North America's largest and oldest nonprofit
+                                organization dedicated to archaeology. The Institute advances awareness, education,
+                                fieldwork, preservation, publication, and research of archaeological sites and cultural
+                                heritage throughout the world. Your contribution makes a difference.</p>
+                        </div>
+                        <a href="donate.html" class="aia-btn aia-btn-blue">READ MORE</a>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Right Card - Journal -->
-        <div class="publication-card">
-            <div class="publication-image" style="background-image: url('journal.jpg');">
-                <div class="publication-overlay">
-                    <h2 class="publication-title">
-                        <span class="title-caps"><span class="first-letter">O</span>DISHA <span class="first-letter">J</span>OURNAL</span> 
-                        <span class="title-italic">of art & culture</span>
-                    </h2>
-                    <p class="publication-description">
-                        The Odisha Journal has set the standard for respected scholarship of Odia art and culture since 1950. The January 2026 issue contains articles on temple architecture of Bhubaneswar, traditional handicrafts of tribal Odisha, classical music traditions, and contemporary art movements. Open-access content includes a comprehensive study of Pattachitra painting techniques, a review of the <em>Tribal Art: Heritage of Odisha</em> exhibition, and letters from renowned artists and scholars.
-                    </p>
-                    <div class="publication-buttons">
-                        <a href="journal.html" class="btn-blue">EXPLORE THE JOURNAL</a>
-                        <a href="support.html" class="btn-orange">SUPPORT THE ACADEMY</a>
+            <!-- Bottom Row - Latest News + Facebook -->
+            <div class="aia-bottom-row">
+                <!-- Latest News Card -->
+                <div class="aia-card aia-news">
+                    <div class="aia-card-overlay">
+                        <h2 class="aia-card-heading">
+                            <span class="aia-heading-italic">latest</span> News
+                        </h2>
+
+
+                        <div class="aia-card-text">
+                            <p class="aia-news-item">Field School Scholar Spotlight: Alexandria Crosby</p>
+                            <p class="aia-news-item">2026 AIA Awards Spotlight – Excellence in Undergraduate Teaching
+                                Award</p>
+                            <p class="aia-news-item">Discover the Griffin Warrior of Pylos at the 2026 Annual Meeting
+                            </p>
+                        </div>
+                        <a href="news.html" class="aia-btn aia-btn-blue">READ MORE</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Interactive Sections - Row 1 -->
-<section class="interactive-sections">
-    <div class="interactive-container">
-        <!-- Card 1 - Interactive Digs -->
-        <div class="interactive-card">
-            <div class="interactive-image" style="background-image: url('inter.jpg');">
-                <div class="interactive-overlay">
-                    <h2 class="interactive-title">
-                        <span class="inter-italic">interactive</span> 
-                        <span class="inter-caps"><span class="first-letter">D</span>IGS</span>
-                    </h2>
-                    <p class="interactive-description">
-                        Follow an excavation project as it happens. Interactive Digs are an opportunity to see an excavation unfold in real time. Archaeologists post regular updates from the field, answer questions, and describe life on a dig.
-                    </p>
-                    <div class="interactive-button">
-                        <a href="digs.html" class="btn-blue-inter">DISCOVER MORE</a>
+
+                <!-- Facebook Page Embed -->
+                <!-- Facebook Page Placeholder -->
+                <div class="aia-facebook-embed">
+                    <div class="facebook-placeholder">
+                        <div class="facebook-header">
+                            <div class="fb-logo-circle">
+                                <img src="lalitakala.png" alt="Odisha Lalit Kala Akademi" class="fb-logo">
+                            </div>
+                            <div class="fb-info">
+                                <h3 class="fb-title">Odisha Lalit Kala Akademi</h3>
+                                <p class="fb-followers">Connect with us • Follow for updates</p>
+                            </div>
+                        </div>
+
+                        <div class="facebook-content">
+                            <div class="fb-posts">
+                                <div class="fb-post-item">
+                                    <div class="fb-post-header">
+                                        <strong>Odisha Lalit Kala Akademi</strong>
+                                        <span class="fb-post-time">2 days ago</span>
+                                    </div>
+                                    <p class="fb-post-text">🎨 Artist Workshop Registration Now Open - Join our upcoming
+                                        workshop series featuring renowned artists from across India. Limited seats
+                                        available!</p>
+                                </div>
+
+                                <div class="fb-post-item">
+                                    <div class="fb-post-header">
+                                        <strong>Odisha Lalit Kala Akademi</strong>
+                                        <span class="fb-post-time">5 days ago</span>
+                                    </div>
+                                    <p class="fb-post-text">🌟 Annual Cultural Festival Announced - March 15-20, 2026.
+                                        Experience six days of art exhibitions and cultural celebrations!</p>
+                                </div>
+
+                                <div class="fb-post-item">
+                                    <div class="fb-post-header">
+                                        <strong>Odisha Lalit Kala Akademi</strong>
+                                        <span class="fb-post-time">1 week ago</span>
+                                    </div>
+                                    <p class="fb-post-text">✨ New Exhibition Opening: Contemporary Odisha Art - January
+                                        15, 2026. Don't miss this spectacular showcase!</p>
+                                </div>
+                            </div>
+
+                            <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" class="fb-follow-btn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                                Follow Us on Facebook
+                            </a>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
-
-        <!-- Card 2 - National Lecture Program -->
-        <div class="interactive-card">
-            <div class="interactive-image" style="background-image: url('lecture.jpg');">
-                <div class="interactive-overlay">
-                    <h2 class="interactive-title">
-                        <span class="inter-italic">national</span> 
-                        <span class="inter-caps"><span class="first-letter">L</span>ECTURE <span class="first-letter">P</span>ROGRAM</span>
-                    </h2>
-                    <p class="interactive-description">
-                        The AIA is pleased to present its 129th National Lecture Program, running from September 2024 through April 2025. Top scholars from North America and abroad are presenting a wide range of current archaeological topics and, as always, lectures are free to the public—everyone is welcome to attend.
-                    </p>
-                    <div class="interactive-button">
-                        <a href="lectures.html" class="btn-orange-inter">VIRTUAL LECTURES</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Interactive Sections - Row 2 -->
-<section class="interactive-sections">
-    <div class="interactive-container">
-        <!-- Card 3 - AIA Tours -->
-        <div class="interactive-card">
-            <div class="interactive-image" style="background-image: url('tours.jpg');">
-                <div class="interactive-overlay">
-                    <h2 class="interactive-title">
-                        <span class="inter-caps"><span class="first-letter">A</span>IA</span> 
-                        <span class="inter-italic">tours</span>
-                    </h2>
-                    <p class="interactive-description">
-                        Travel with an engaging and informative AIA Tours lecturer, plus trip managers and local guides. Each well-paced itinerary offers ample time at each site. By traveling on an AIA Tour you directly support the Archaeological Institute of America (AIA) while personally gaining the benefit of the AIA's network of scholars and worldwide contacts.
-                    </p>
-                    <div class="interactive-button">
-                        <a href="tours.html" class="btn-orange-inter">TRAVEL WITH THE AIA</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 4 - Field Projects -->
-        <div class="interactive-card">
-            <div class="interactive-image" style="background-image: url('field.jpg');">
-                <div class="interactive-overlay">
-                    <h2 class="interactive-title">
-                        <span class="inter-caps"><span class="first-letter">F</span>IELD</span> 
-                        <span class="inter-italic">projects</span>
-                    </h2>
-                    <p class="interactive-description">
-                        Interested in participating in an archaeological project? The AIA has resources for people looking to get into the field through the Archaeological Fieldwork Opportunities Bulletin (AFOB).
-                    </p>
-                    <div class="interactive-button">
-                        <a href="field.html" class="btn-blue-inter">AFOB</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Footer -->
-<!-- Footer -->
-<footer class="site-footer">
-    <!-- Blue Section -->
-    <div class="footer-blue-section">
-        <div class="footer-container">
-            <!-- Top Section -->
-            <div class="footer-top">
-                <!-- Navigation Links (LEFT) -->
-                <nav class="footer-nav">
-                    <a href="contact.html">Contact</a>
-                    <span class="nav-separator">/</span>
-                    <a href="donate.html">Donate</a>
-                    <span class="nav-separator">/</span>
-                    <a href="cart.html">Cart</a>
-                    <span class="nav-separator">/</span>
-                    <a href="account.html">Account</a>
-                </nav>
-
-                <!-- Back to Top Button (RIGHT) -->
-                <a href="#top" class="back-to-top">Back to Top ↑</a>
-            </div>
-
-            <!-- Social Icons -->
-            <div class="footer-social">
-                <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-
-            <!-- Logo -->
-            <div class="footer-logo">
-                <h2 class="footer-title">
-                    <span class="footer-main">Lalit Kala Academy</span> 
-                    <span class="footer-of">of</span> 
-                    <span class="footer-country">Odisha</span>
+    </section>
+    <!-- Upcoming Events Section -->
+    <section class="upcoming-events">
+        <div class="events-container">
+            <!-- Section Title -->
+            <div class="events-header">
+                <h2 class="events-title">
+                    <span class="events-title-italic">upcoming</span>
+                    <span class="events-title-caps"> EVENTS</span>
                 </h2>
+                <div class="events-underline"></div>
+            </div>
+
+            <!-- Events Grid -->
+            <div class="events-grid">
+                <!-- Event Card 1 -->
+                <div class="event-card">
+                    <div class="event-date">December 27, 2025</div>
+                    <div class="event-content">
+                        <p class="event-type">LECTURE</p>
+                        <h3 class="event-title">Battlefield Archaeology</h3>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="event-card">
+                    <div class="event-date">January 11, 2026</div>
+                    <div class="event-content">
+                        <p class="event-type">LECTURE</p>
+                        <h3 class="event-title">Zoom Lecture: Forgotten Saint-Simonian Travelers In Egypt</h3>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card">
+                    <div class="event-date">January 15, 2026</div>
+                    <div class="event-content">
+                        <p class="event-type">LECTURE</p>
+                        <h3 class="event-title">Early Peoples In The Plateau: Nimiipuu Knowledge And Landscape
+                            Adaptation In The Bitterroot Mountains</h3>
+                        <p class="event-location">Spokane, WA</p>
+                    </div>
+                </div>
+
+                <!-- Event Card 4 -->
+                <div class="event-card">
+                    <div class="event-date">January 18, 2026</div>
+                    <div class="event-content">
+                        <p class="event-type">LECTURE</p>
+                        <h3 class="event-title">The Southern Mani Archaeological Project: Fieldwork At The End Of The
+                            World</h3>
+                        <p class="event-location">Ottawa, Canada</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- Explore More Events Banner -->
+    <section class="explore-events-banner">
+        <div class="events-container">
+            <a href="events.html" class="explore-link">
+                <div class="explore-overlay">
+                    <h2 class="explore-text">EXPLORE MORE EVENTS ›</h2>
+                </div>
+            </a>
+        </div>
+    </section>
+    <!-- Publications Section -->
+    <section class="publications-section">
+        <div class="publications-container">
+            <!-- Left Card - Magazine -->
+            <div class="publication-card">
+                <div class="publication-image" style="background-image: url('mag.jpg');">
+                    <div class="publication-overlay">
+                        <h2 class="publication-title">
+                            <span class="title-italic">art & culture</span>
+                            <span class="title-caps"><span class="first-letter">M</span>AGAZINE</span>
+                        </h2>
+                        <p class="publication-description">
+                            ART & CULTURE has been published continuously by the Odisha Lalit Kala Academy, which is
+                            dedicated to supporting artistic inquiry and to fostering the pursuit of knowledge about
+                            Odisha's rich cultural heritage. The January/February 2026 issue features the Top 10 Art
+                            Exhibitions of 2025. Other stories include the origins of Pattachitra art, traditional
+                            sculptures of Konark, and the revival of classical Odissi dance forms.
+                        </p>
+                        <div class="publication-buttons">
+                            <a href="magazine.html" class="btn-blue">EXPLORE THE MAGAZINE</a>
+                            <a href="archive.html" class="btn-orange">SEARCH THE ARCHIVE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Copyright Section (Separate White/Gray Background) -->
-    <div class="footer-copyright">
-        <p>© 2025 by the Odisha Lalit Kala Academy. All rights reserved, including rights for text and data mining and training of artificial intelligence or similar technologies. | <a href="privacy.html">Privacy Policy</a> | Website by <a href="#">Yelling Mule</a>, ongoing development by <a href="#">Castle Builder</a>.</p>
-    </div>
-</footer>
+            <!-- Right Card - Journal -->
+            <div class="publication-card">
+                <div class="publication-image" style="background-image: url('journal.jpg');">
+                    <div class="publication-overlay">
+                        <h2 class="publication-title">
+                            <span class="title-caps"><span class="first-letter">O</span>DISHA <span
+                                    class="first-letter">J</span>OURNAL</span>
+                            <span class="title-italic">of art & culture</span>
+                        </h2>
+                        <p class="publication-description">
+                            The Odisha Journal has set the standard for respected scholarship of Odia art and culture
+                            since 1950. The January 2026 issue contains articles on temple architecture of Bhubaneswar,
+                            traditional handicrafts of tribal Odisha, classical music traditions, and contemporary art
+                            movements. Open-access content includes a comprehensive study of Pattachitra painting
+                            techniques, a review of the <em>Tribal Art: Heritage of Odisha</em> exhibition, and letters
+                            from renowned artists and scholars.
+                        </p>
+                        <div class="publication-buttons">
+                            <a href="journal.html" class="btn-blue">EXPLORE THE JOURNAL</a>
+                            <a href="support.html" class="btn-orange">SUPPORT THE ACADEMY</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Interactive Sections - Row 1 -->
+    <section class="interactive-sections">
+        <div class="interactive-container">
+            <!-- Card 1 - Interactive Digs -->
+            <div class="interactive-card">
+                <div class="interactive-image" style="background-image: url('inter.jpg');">
+                    <div class="interactive-overlay">
+                        <h2 class="interactive-title">
+                            <span class="inter-italic">interactive</span>
+                            <span class="inter-caps"><span class="first-letter">D</span>IGS</span>
+                        </h2>
+                        <p class="interactive-description">
+                            Follow an excavation project as it happens. Interactive Digs are an opportunity to see an
+                            excavation unfold in real time. Archaeologists post regular updates from the field, answer
+                            questions, and describe life on a dig.
+                        </p>
+                        <div class="interactive-button">
+                            <a href="digs.html" class="btn-blue-inter">DISCOVER MORE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 - National Lecture Program -->
+            <div class="interactive-card">
+                <div class="interactive-image" style="background-image: url('lecture.jpg');">
+                    <div class="interactive-overlay">
+                        <h2 class="interactive-title">
+                            <span class="inter-italic">national</span>
+                            <span class="inter-caps"><span class="first-letter">L</span>ECTURE <span
+                                    class="first-letter">P</span>ROGRAM</span>
+                        </h2>
+                        <p class="interactive-description">
+                            The AIA is pleased to present its 129th National Lecture Program, running from September
+                            2024 through April 2025. Top scholars from North America and abroad are presenting a wide
+                            range of current archaeological topics and, as always, lectures are free to the
+                            public—everyone is welcome to attend.
+                        </p>
+                        <div class="interactive-button">
+                            <a href="lectures.html" class="btn-orange-inter">VIRTUAL LECTURES</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Sections - Row 2 -->
+    <section class="interactive-sections">
+        <div class="interactive-container">
+            <!-- Card 3 - AIA Tours -->
+            <div class="interactive-card">
+                <div class="interactive-image" style="background-image: url('tours.jpg');">
+                    <div class="interactive-overlay">
+                        <h2 class="interactive-title">
+                            <span class="inter-caps"><span class="first-letter">A</span>IA</span>
+                            <span class="inter-italic">tours</span>
+                        </h2>
+                        <p class="interactive-description">
+                            Travel with an engaging and informative AIA Tours lecturer, plus trip managers and local
+                            guides. Each well-paced itinerary offers ample time at each site. By traveling on an AIA
+                            Tour you directly support the Archaeological Institute of America (AIA) while personally
+                            gaining the benefit of the AIA's network of scholars and worldwide contacts.
+                        </p>
+                        <div class="interactive-button">
+                            <a href="tours.html" class="btn-orange-inter">TRAVEL WITH THE AIA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 - Field Projects -->
+            <div class="interactive-card">
+                <div class="interactive-image" style="background-image: url('field.jpg');">
+                    <div class="interactive-overlay">
+                        <h2 class="interactive-title">
+                            <span class="inter-caps"><span class="first-letter">F</span>IELD</span>
+                            <span class="inter-italic">projects</span>
+                        </h2>
+                        <p class="interactive-description">
+                            Interested in participating in an archaeological project? The AIA has resources for people
+                            looking to get into the field through the Archaeological Fieldwork Opportunities Bulletin
+                            (AFOB).
+                        </p>
+                        <div class="interactive-button">
+                            <a href="field.html" class="btn-blue-inter">AFOB</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="site-footer">
+        <!-- Blue Section -->
+        <div class="footer-blue-section">
+            <div class="footer-container">
+                <!-- Top Section -->
+                <div class="footer-top">
+                    <!-- Navigation Links (LEFT) -->
+                    <nav class="footer-nav">
+                        <a href="contact.html">Contact</a>
+                        <span class="nav-separator">/</span>
+                        <a href="donate.html">Donate</a>
+                        <span class="nav-separator">/</span>
+                        <a href="cart.html">Cart</a>
+                        <span class="nav-separator">/</span>
+                        <a href="account.html">Account</a>
+                    </nav>
+
+                    <!-- Back to Top Button (RIGHT) -->
+                    <a href="#top" class="back-to-top">Back to Top ↑</a>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+
+                <!-- Logo -->
+                <div class="footer-logo">
+                    <h2 class="footer-title">
+                        <span class="footer-main">Lalit Kala Academy</span>
+                        <span class="footer-of">of</span>
+                        <span class="footer-country">Odisha</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Section (Separate White/Gray Background) -->
+        <div class="footer-copyright">
+            <p>© 2025 by the Odisha Lalit Kala Academy. All rights reserved, including rights for text and data mining
+                and training of artificial intelligence or similar technologies. | <a href="privacy.html">Privacy
+                    Policy</a> | Website by <a href="#">Yelling Mule</a>, ongoing development by <a href="#">Castle
+                    Builder</a>.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
