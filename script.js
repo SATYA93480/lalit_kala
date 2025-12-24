@@ -11,7 +11,7 @@ if (menuToggle && mainNav) {
     });
 }
 
-// Close main mobile menu when clicking links (NOT the more 3‑bar)
+// Close main mobile menu when clicking links
 const mainNavLinks = document.querySelectorAll('.nav-link-main:not(.more-toggle), .dropdown-link');
 mainNavLinks.forEach(link => {
     link.addEventListener('click', function () {
@@ -31,194 +31,125 @@ window.addEventListener('resize', function () {
 });
 
 // =====================
-// MORE SLIDER MENU – FINAL
+// MORE SLIDER MENU – DESKTOP ONLY
+// =====================
+// =====================
+// SLIDER MENU - Desktop and Mobile
+// =====================
+// =====================
+// SLIDER MENU - Desktop and Mobile with Click-to-Expand
 // =====================
 document.addEventListener('DOMContentLoaded', function () {
     const moreToggle = document.getElementById('moreToggle');
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const moreSlider = document.getElementById('moreSlider');
-    const moreClose  = document.getElementById('moreClose');
-
-    // Create overlay if not present
-    let overlay = document.querySelector('.more-overlay');
-    if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.className = 'more-overlay';
-        document.body.appendChild(overlay);
-    }
+    const moreClose = document.getElementById('moreClose');
+    const moreOverlay = document.getElementById('moreOverlay');
 
     let scrollPosition = 0;
 
     function closeSlider() {
-        if (!moreSlider) return;
-
-        moreToggle && moreToggle.classList.remove('active');
+        if (moreToggle) moreToggle.classList.remove('active');
+        if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
         moreSlider.classList.remove('active');
-        overlay.classList.remove('active');
+        moreOverlay.classList.remove('active');
 
-        // restore body scroll
         document.body.style.overflow = '';
         document.body.style.position = '';
         document.body.style.top = '';
-        document.body.style.width = '';
         window.scrollTo(0, scrollPosition);
     }
 
     function openSlider() {
-        if (!moreSlider) return;
-
-        // save scroll
-        scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-        moreToggle && moreToggle.classList.add('active');
+        scrollPosition = window.pageYOffset;
+        
         moreSlider.classList.add('active');
-        overlay.classList.add('active');
+        moreOverlay.classList.add('active');
 
-        // lock background scroll, allow slider scroll (CSS has overflow-y:auto)
         document.body.style.overflow = 'hidden';
         document.body.style.position = 'fixed';
         document.body.style.top = `-${scrollPosition}px`;
-        document.body.style.width = '100%';
-
-        setupCompleteMobileMenu();
     }
 
-    // toggle button
-    moreToggle && moreToggle.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
+    // Desktop More Toggle
+    if (moreToggle) {
+        moreToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
 
-        if (moreSlider && moreSlider.classList.contains('active')) {
-            closeSlider();
-        } else {
-            openSlider();
-        }
-    });
-
-    moreClose && moreClose.addEventListener('click', closeSlider);
-    overlay.addEventListener('click', closeSlider);
-
-    document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && moreSlider && moreSlider.classList.contains('active')) {
-            closeSlider();
-        }
-    });
-
-    // let links work normally, just close slider after click
-    if (moreSlider) {
-        moreSlider.addEventListener('click', e => {
-            const link = e.target.closest('.slider-section a');
-            if (link) {
-                // no preventDefault -> browser will follow href
+            if (moreSlider.classList.contains('active')) {
                 closeSlider();
+            } else {
+                this.classList.add('active');
+                openSlider();
             }
         });
     }
 
-    // ===== BUILD ALL PAGES FOR MOBILE =====
-    function setupCompleteMobileMenu() {
-        if (window.innerWidth > 900) return;
-        const slider = document.getElementById('moreSlider');
-        if (!slider) return;
+    // Mobile Menu Toggle
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
 
-        // clear previous dynamic sections
-        slider.querySelectorAll('.mobile-full-section').forEach(s => s.remove());
-
-        // 1. Who we are
-        addSection(slider, 'who', '👥 WHO WE ARE', [
-            'mission.html|Mission',
-            'history.html|History',
-            'activities.html|Activities'
-        ]);
-
-        // 2. Publication
-        addSection(slider, 'pub', '📚 PUBLICATION', [
-            'publication.html|Publication',
-            'magazines.html|Magazines',
-            'achievements.html|Achievements',
-            'art-odisha-glance.html|Art Odisha Glance'
-        ]);
-
-        // 3. Media gallery
-        addSection(slider, 'media', '📸 MEDIA GALLERY', [
-            'photo-gallery.html|Photo Gallery',
-            'video-gallery.html|Video Gallery'
-        ]);
-
-        // 4. About us
-        addSection(slider, 'about', 'ℹ️ ABOUT US', [
-            'about-lalitkala.html|About Lalit Kala',
-            'staffing-pattern.html|Staffing Pattern',
-            'artist-database.html|Artist Database',
-            'contact-us.html|Contact Us'
-        ]);
-
-        // 5. Notifications
-        addSection(slider, 'notif', '🔔 NOTIFICATIONS', [
-            'awards-felicitation.html|Awards',
-            'plans-programmes.html|Plans',
-            'announcement.html|Announcement',
-            'advertisement.html|Advertisement',
-            'tender-notice.html|Tender Notice',
-            'events.html|Events'
-        ]);
+            if (moreSlider.classList.contains('active')) {
+                closeSlider();
+            } else {
+                this.classList.add('active');
+                openSlider();
+            }
+        });
     }
 
-    function addSection(slider, id, title, links) {
-        const section = document.createElement('div');
-        section.className = 'slider-section mobile-full-section';
-        section.dataset.id = id;
-
-        const linksHTML = links.map(item => {
-            const [href, text] = item.split('|');
-            return `<li><a href="${href}" class="slider-link">${text}</a></li>`;
-        }).join('');
-
-        section.innerHTML = `
-            <h4>${title} <i class="fas fa-chevron-right"></i></h4>
-            <ul>${linksHTML}</ul>
-        `;
-        slider.appendChild(section);
+    // Close button
+    if (moreClose) {
+        moreClose.addEventListener('click', closeSlider);
     }
-});
-// ===== SECTION TOGGLE + BACK BUTTONS =====
-document.addEventListener('DOMContentLoaded', function () {
+
+    // Overlay click
+    moreOverlay.addEventListener('click', closeSlider);
+
+    // ESC key
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && moreSlider.classList.contains('active')) {
+            closeSlider();
+        }
+    });
+
+    // Section toggle - CLICK TO EXPAND (Both Desktop and Mobile)
     const sections = document.querySelectorAll('.slider-section');
-
     sections.forEach(section => {
         const heading = section.querySelector('h4');
         const list = section.querySelector('ul');
 
         if (!heading || !list) return;
 
-        // Start collapsed
-        list.style.display = 'none';
-
         heading.addEventListener('click', function () {
-            const isOpen = list.style.display === 'block';
+            const isActive = list.classList.contains('active');
 
-            // Close all other sections
-            sections.forEach(s => {
-                const ul = s.querySelector('ul');
-                if (ul) ul.style.display = 'none';
-            });
-
-            // Toggle this section
-            list.style.display = isOpen ? 'none' : 'block';
+            // Toggle current section
+            if (isActive) {
+                list.classList.remove('active');
+                heading.classList.remove('active');
+            } else {
+                list.classList.add('active');
+                heading.classList.add('active');
+            }
         });
     });
 
-    // Back links
-    const backLinks = document.querySelectorAll('.slider-back');
-    backLinks.forEach(back => {
-        back.addEventListener('click', function (e) {
-            e.preventDefault();
-            const section = back.closest('.slider-section');
-            const list = section && section.querySelector('ul');
-            if (list) list.style.display = 'none';
+    // Close slider when clicking links
+    const sliderLinks = moreSlider.querySelectorAll('a');
+    sliderLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            closeSlider();
         });
     });
 });
 
+// Keep your other JavaScript (search, language, news ticker, etc.)
+
+// Keep your other JavaScript (search, language, news ticker, etc.)
 
 // =====================
 // SEARCH FUNCTIONALITY
@@ -276,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (newsItems.length > 0) {
         let currentIndex = 0;
-        const intervalTime = 6000; // 6 seconds
+        const intervalTime = 6000;
 
         function showNextNews() {
             newsItems[currentIndex].classList.remove('active');
