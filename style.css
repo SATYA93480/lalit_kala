@@ -283,6 +283,7 @@ body {
     padding: 5px 0;
     position: relative;
     z-index: 2;
+    top:0;
 }
 
 .header-container {
@@ -1594,7 +1595,7 @@ body {
     }
 
     .language-btn-group {
-        padding: 6px 14px;
+        padding: 8px 14px;
         margin-top: 10px;
     }
 
