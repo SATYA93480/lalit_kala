@@ -1084,6 +1084,7 @@ body {
     
     .mobile-menu-toggle {
         display: flex !important;
+        margin-top: 10px;
     }
     
     /* Navbar: Hide Login/Register on Mobile */
@@ -1594,6 +1595,7 @@ body {
 
     .language-btn-group {
         padding: 6px 14px;
+        margin-top: 10px;
     }
 
     .btn-lang {
@@ -1963,7 +1965,7 @@ body {
 
 .mission-video-wrapper {
     width: 100%;
-    background-color: #000;
+    /* background-color: #000; */
     overflow: hidden;
     border-radius: 0;
 }
@@ -1971,7 +1973,9 @@ body {
 .mission-video {
     display: block;
     width: 100%;
-    height: auto;
+    height: 500px;
+    margin-top: 80px;
+    object-fit: fill;
 }
 
 /* ===== RESPONSIVE BREAKPOINTS ===== */
@@ -2169,7 +2173,7 @@ body {
 /* Mobile */
 @media (max-width: 768px) {
     .hero-section {
-        min-height: 450px;
+        min-height: 200px;
     }
 
     .hero-container {
@@ -6140,6 +6144,7 @@ body {
 /* Video height */
 .about-video-el {
     max-height: 320px;
+    margin-top: 156px;
 }
 
 /* Functions list */
@@ -6733,7 +6738,7 @@ body {
     background-color: #fafafa;
 }
 
-.auth-success-icon {
+/* .auth-success-icon {
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -6743,7 +6748,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 20px;
-}
+} */
 
 .auth-success-text {
     font-family: 'Lato', sans-serif;

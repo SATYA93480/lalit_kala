@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission - Lalit Kala Akademi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <!-- Bootstrap Icons (NEW - ADD THIS) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
 </head>
 <body>
     <!-- SAME TOP NAVBAR -->
-    <header class="navbar">
+    <!-- TOP NAVBAR -->
+<header class="navbar">
     <div class="navbar-container">
         <div class="navbar-left"></div>
         <div class="navbar-right">
             <ul id="menu-top-nav" class="header_top_nav">
                 <li class="text-light"><a href="login-register.html" class="nav-link">Login or Register</a></li>
-                <li><span class="nav-divider">/</span></li>
+                <!-- <li><span class="nav-divider">/</span></li> -->
                 <li class="contact-divider"><span class="nav-divider">/</span></li>
                 <li class="contact-link-item text-light"><a href="contact-us.html" class="nav-link">Contact</a></li>
             </ul>
@@ -29,7 +32,10 @@
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="SEARCH" id="searchInput">
                 <button class="search-btn" id="searchBtn">
-                    
+                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg> 
                 </button>
             </div>
             
@@ -106,45 +112,27 @@
 </header>
 
 <!-- SLIDER MENU -->
+<!-- ========== SLIDER MENU ========== -->
 <div class="more-slider" id="moreSlider">
     <div class="more-slider-header">
         <h3>Menu</h3>
         <button class="more-close" id="moreClose">×</button>
     </div>
 
-    <!-- MOBILE ONLY: Who We Are -->
+    <!-- ========== MOBILE ONLY SECTIONS ========== -->
+    
+    <!-- MOBILE: Login & Register (FIRST) -->
     <div class="slider-section mobile-only-section">
-        <h4>👥 WHO WE ARE <i class="fas fa-chevron-down"></i></h4>
+        <h4><i class="bi bi-person-circle"></i> LOGIN & REGISTER <i class="fas fa-chevron-down"></i></h4>
         <ul>
-            <li><a href="mission.html">Mission</a></li>
-            <li><a href="history.html">History</a></li>
-            <li><a href="activities.html">Activities</a></li>
+            <li><a href="login-register.html">Login or Register</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
         </ul>
     </div>
 
-    <!-- MOBILE ONLY: Publication -->
+    <!-- MOBILE: About Us (2ND) -->
     <div class="slider-section mobile-only-section">
-        <h4>📚 PUBLICATION <i class="fas fa-chevron-down"></i></h4>
-        <ul>
-            <li><a href="publication.html">Publication</a></li>
-            <li><a href="magazines.html">Magazines</a></li>
-            <li><a href="achievements.html">Achievements</a></li>
-            <li><a href="art-odisha-glance.html">Art Odisha at a Glance</a></li>
-        </ul>
-    </div>
-
-    <!-- BOTH: Media Gallery -->
-    <div class="slider-section">
-        <h4>📸 MEDIA GALLERY <i class="fas fa-chevron-down"></i></h4>
-        <ul>
-            <li><a href="photo-gallery.html">Photo Gallery</a></li>
-            <li><a href="video-gallery.html">Video Gallery</a></li>
-        </ul>
-    </div>
-
-    <!-- BOTH: About Us -->
-    <div class="slider-section">
-        <h4>ℹ️ ABOUT US <i class="fas fa-chevron-down"></i></h4>
+        <h4><i class="bi bi-info-circle"></i> ABOUT US <i class="fas fa-chevron-down"></i></h4>
         <ul>
             <li><a href="about-lalitkala.html">About Lalit Kala</a></li>
             <li><a href="staffing-pattern.html">Staffing Pattern</a></li>
@@ -153,9 +141,9 @@
         </ul>
     </div>
 
-    <!-- BOTH: Notifications -->
-    <div class="slider-section">
-        <h4>🔔 NOTIFICATIONS <i class="fas fa-chevron-down"></i></h4>
+    <!-- MOBILE: Notifications (3RD) -->
+    <div class="slider-section mobile-only-section">
+        <h4><i class="bi bi-bell"></i> NOTIFICATIONS <i class="fas fa-chevron-down"></i></h4>
         <ul>
             <li><a href="awards-felicitation.html">Awards & Felicitation</a></li>
             <li><a href="plans-programmes.html">Plans & Programmes</a></li>
@@ -166,11 +154,76 @@
         </ul>
     </div>
 
-    <!-- MOBILE ONLY: Join -->
+    <!-- MOBILE: Media Gallery (4TH) -->
     <div class="slider-section mobile-only-section">
-        <h4>🤝 JOIN <i class="fas fa-chevron-down"></i></h4>
+        <h4><i class="bi bi-images"></i> MEDIA GALLERY <i class="fas fa-chevron-down"></i></h4>
+        <ul>
+            <li><a href="photo-gallery.html">Photo Gallery</a></li>
+            <li><a href="video-gallery.html">Video Gallery</a></li>
+        </ul>
+    </div>
+
+    <!-- MOBILE: Who We Are -->
+    <div class="slider-section mobile-only-section">
+        <h4><i class="bi bi-people"></i> WHO WE ARE <i class="fas fa-chevron-down"></i></h4>
+        <ul>
+            <li><a href="mission.html">Mission</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="activities.html">Activities</a></li>
+        </ul>
+    </div>
+
+    <!-- MOBILE: Publication -->
+    <div class="slider-section mobile-only-section">
+        <h4><i class="bi bi-book"></i> PUBLICATION <i class="fas fa-chevron-down"></i></h4>
+        <ul>
+            <li><a href="publication.html">Publication</a></li>
+            <li><a href="magazines.html">Magazines</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="art-odisha-glance.html">Art Odisha at a Glance</a></li>
+        </ul>
+    </div>
+
+    <!-- MOBILE: Join -->
+    <div class="slider-section mobile-only-section">
+        <h4><i class="bi bi-hand-thumbs-up"></i> JOIN <i class="fas fa-chevron-down"></i></h4>
         <ul>
             <li><a href="join.html">Become a Member</a></li>
+        </ul>
+    </div>
+
+    <!-- ========== DESKTOP ONLY SECTIONS ========== -->
+    
+    <!-- DESKTOP: About Us (1ST) -->
+    <div class="slider-section desktop-only-section">
+        <h4><i class="bi bi-info-circle"></i> ABOUT US <i class="fas fa-chevron-down"></i></h4>
+        <ul>
+            <li><a href="about-lalitkala.html">About Lalit Kala</a></li>
+            <li><a href="staffing-pattern.html">Staffing Pattern</a></li>
+            <li><a href="artist-database.html">Artist Database</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- DESKTOP: Notifications (2ND) -->
+    <div class="slider-section desktop-only-section">
+        <h4><i class="bi bi-bell"></i> NOTIFICATIONS <i class="fas fa-chevron-down"></i></h4>
+        <ul>
+            <li><a href="awards-felicitation.html">Awards & Felicitation</a></li>
+            <li><a href="plans-programmes.html">Plans & Programmes</a></li>
+            <li><a href="announcement.html">Announcement</a></li>
+            <li><a href="advertisement.html">Advertisement</a></li>
+            <li><a href="tender-notice.html">Tender Notice</a></li>
+            <li><a href="events.html">Events</a></li>
+        </ul>
+    </div>
+
+    <!-- DESKTOP: Media Gallery (3RD) -->
+    <div class="slider-section desktop-only-section">
+        <h4><i class="bi bi-images"></i> MEDIA GALLERY <i class="fas fa-chevron-down"></i></h4>
+        <ul>
+            <li><a href="photo-gallery.html">Photo Gallery</a></li>
+            <li><a href="video-gallery.html">Video Gallery</a></li>
         </ul>
     </div>
 </div>
